@@ -9,8 +9,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/clients/industries/education' },
-  title: "Education IT Solutions & Networking | Lalani Computers",
-  description: "Campus-wide networking, lab PCs, and smart projectors for educational institutions. Reliable turnkey IT deployment and AMC services in Mumbai.",
+  title: "IT Hardware & Smart Classroom Setup for Education | Lalani Computers",
+  description: "Campus-wide Wi-Fi networking, smart projectors, and computer lab setups for schools, colleges, and educational institutions in Mumbai.",
 };
 
 const campusKits = [
@@ -55,6 +55,25 @@ const campusKits = [
 export default function EducationPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Education IT Hardware & Networking",
+            "provider": {
+              "@type": "Organization",
+              "name": "Lalani Computers"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Mumbai"
+            },
+            "description": "Campus-wide Wi-Fi networking, smart projectors, and computer lab setups for schools, colleges, and educational institutions in Mumbai."
+          })
+        }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>

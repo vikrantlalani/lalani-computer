@@ -62,7 +62,43 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.lalanicomputers.com/#organization",
+                  "name": "Lalani Computers",
+                  "url": "https://www.lalanicomputers.com",
+                  "logo": "https://www.lalanicomputers.com/logo.png",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-93233-32850",
+                    "contactType": "customer service"
+                  }
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://www.lalanicomputers.com/#localbusiness",
+                  "name": "Lalani Computers",
+                  "telephone": "+91-93233-32850",
+                  "url": "https://www.lalanicomputers.com",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "59, Janmabhoomi Marg, Janmabhoomi Bhavan, Kala Ghoda, Fort",
+                    "addressLocality": "Mumbai",
+                    "addressRegion": "Maharashtra",
+                    "postalCode": "400001",
+                    "addressCountry": "IN"
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col relative overflow-x-hidden">
         <CookieConsentProvider>

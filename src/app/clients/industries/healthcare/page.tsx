@@ -9,8 +9,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/clients/industries/healthcare' },
-  title: "Healthcare IT Solutions & Surveillance | Lalani Computers",
-  description: "Compliance-ready data storage, specialized displays, and secure CCTV surveillance for healthcare & pharma. Turnkey IT setups and reliable AMC in Mumbai.",
+  title: "IT Infrastructure & Surveillance for Healthcare in Mumbai | Lalani Computers",
+  description: "Compliance-ready data storage, hospital surveillance (CCTV), and specialized IT hardware for healthcare facilities and pharmaceuticals in Mumbai.",
 };
 
 const roomKits = [
@@ -64,6 +64,25 @@ const compliancePoints = [
 export default function HealthcarePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Healthcare IT Infrastructure & Surveillance",
+            "provider": {
+              "@type": "Organization",
+              "name": "Lalani Computers"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Mumbai"
+            },
+            "description": "Compliance-ready data storage, hospital surveillance (CCTV), and specialized IT hardware for healthcare facilities and pharmaceuticals in Mumbai."
+          })
+        }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>

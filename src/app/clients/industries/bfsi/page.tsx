@@ -9,8 +9,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/clients/industries/bfsi' },
-  title: "BFSI IT & Secure Networking Solutions | Lalani Computers",
-  description: "Turnkey IT setups, secure endpoint deployments, and high-availability server racks for the BFSI sector. Reliable networking and AMC by Lalani Computers.",
+  title: "Enterprise IT Hardware & Security for BFSI in Mumbai | Lalani Computers",
+  description: "Secure branch rollouts, high-availability servers, and endpoint security hardware for Mumbai's Banking, Financial Services, and Insurance (BFSI) sector.",
 };
 
 const deploymentKits = [
@@ -52,6 +52,25 @@ const compliancePoints = [
 export default function BFSIPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "BFSI IT Infrastructure Setup",
+            "provider": {
+              "@type": "Organization",
+              "name": "Lalani Computers"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Mumbai"
+            },
+            "description": "Secure branch rollouts, high-availability servers, and endpoint security hardware for Mumbai's Banking, Financial Services, and Insurance (BFSI) sector."
+          })
+        }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>

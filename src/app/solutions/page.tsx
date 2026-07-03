@@ -56,6 +56,41 @@ export default function SolutionsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "New Office IT Setup",
+              "provider": { "@type": "Organization", "name": "Lalani Computers" },
+              "areaServed": "Mumbai"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Surveillance & Security Infrastructure",
+              "provider": { "@type": "Organization", "name": "Lalani Computers" },
+              "areaServed": "Mumbai"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Enterprise Networking & Wi-Fi",
+              "provider": { "@type": "Organization", "name": "Lalani Computers" },
+              "areaServed": "Mumbai"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Data Center & Server Room Refresh",
+              "provider": { "@type": "Organization", "name": "Lalani Computers" },
+              "areaServed": "Mumbai"
+            }
+          ])
+        }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>

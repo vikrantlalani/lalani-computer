@@ -9,8 +9,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/clients/industries/manufacturing' },
-  title: "Manufacturing IT & Networking Mumbai | Lalani Computers",
-  description: "Robust factory-floor Wi-Fi, industrial PCs, and extensive CCTV monitoring. Reliable turnkey IT deployments and AMC for Mumbai's manufacturing sector.",
+  title: "Rugged IT Hardware & Factory Networking Mumbai | Lalani Computers",
+  description: "Industrial PCs, factory-floor Wi-Fi networking, and robust IT setups designed for manufacturing plants and warehouses across India.",
 };
 
 const factoryKits = [
@@ -55,6 +55,25 @@ const factoryKits = [
 export default function ManufacturingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Manufacturing IT Hardware & Networking",
+            "provider": {
+              "@type": "Organization",
+              "name": "Lalani Computers"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Mumbai"
+            },
+            "description": "Industrial PCs, factory-floor Wi-Fi networking, and robust IT setups designed for manufacturing plants and warehouses across India."
+          })
+        }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>

@@ -9,8 +9,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/clients/industries/infrastructure' },
-  title: "Real Estate & Infra IT Setups Mumbai | Lalani Computers",
-  description: "Reliable site office networking, biometric access, and rugged workstations for infrastructure projects. Turnkey IT deployments and AMC in Mumbai.",
+  title: "Site Office IT Setup & Networking for Real Estate | Lalani Computers",
+  description: "End-to-end P2P wireless networking, biometric access, and rugged IT hardware for infrastructure projects and construction site offices in Mumbai.",
 };
 
 const siteKits = [
@@ -55,6 +55,25 @@ const siteKits = [
 export default function InfrastructurePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Infrastructure & Real Estate IT Setup",
+            "provider": {
+              "@type": "Organization",
+              "name": "Lalani Computers"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Mumbai"
+            },
+            "description": "End-to-end P2P wireless networking, biometric access, and rugged IT hardware for infrastructure projects and construction site offices in Mumbai."
+          })
+        }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>

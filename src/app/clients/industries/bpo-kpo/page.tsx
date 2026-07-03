@@ -9,8 +9,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/clients/industries/bpo-kpo' },
-  title: "BPO / KPO IT Hardware & Deployments | Lalani Computers",
-  description: "Mass deployment of thin clients, commercial headsets, and reliable UPS backups for BPOs and KPOs. Turnkey IT setups and comprehensive AMC in Mumbai.",
+  title: "Bulk IT Hardware & Thin Clients for BPO/KPO in Mumbai | Lalani Computers",
+  description: "Mass deployment of thin clients, UPS backups, and enterprise networking gear for BPO and KPO call centers. Turnkey IT setups with 24/7 AMC support.",
 };
 
 const seatKits = [
@@ -55,6 +55,25 @@ const seatKits = [
 export default function BPOPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "BPO / KPO IT Hardware Deployment",
+            "provider": {
+              "@type": "Organization",
+              "name": "Lalani Computers"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Mumbai"
+            },
+            "description": "Mass deployment of thin clients, UPS backups, and enterprise networking gear for BPO and KPO call centers. Turnkey IT setups with 24/7 AMC support."
+          })
+        }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
