@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions' },
   title: "Turnkey IT Solutions & New Office Setup in Mumbai",
   description: "End-to-end corporate IT infrastructure deployment in Mumbai. We provide structured cabling, server room setup, Wi-Fi networking, and comprehensive IT AMC services.",
 };
@@ -145,6 +146,17 @@ export default function SolutionsPage() {
               </div>
             </FadeIn>
           ))}
+        </div>
+        <div className="mt-16 text-center border-t border-white/10 pt-12">
+          <Typography variant="h3" className="text-white mb-6">Industries We Serve</Typography>
+          <div className="flex justify-center gap-6 flex-wrap text-beige/70">
+            <Link href="/clients/industries/bfsi" className="hover:text-white hover:underline transition-colors">BFSI</Link>
+            <Link href="/clients/industries/healthcare" className="hover:text-white hover:underline transition-colors">Healthcare</Link>
+            <Link href="/clients/industries/manufacturing" className="hover:text-white hover:underline transition-colors">Manufacturing</Link>
+            <Link href="/clients/industries/education" className="hover:text-white hover:underline transition-colors">Education</Link>
+            <Link href="/clients/industries/bpo-kpo" className="hover:text-white hover:underline transition-colors">BPO & KPO</Link>
+            <Link href="/clients/industries/infrastructure" className="hover:text-white hover:underline transition-colors">Infrastructure</Link>
+          </div>
         </div>
       </Section>
     </>

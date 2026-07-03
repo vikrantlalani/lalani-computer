@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/clients/industries/manufacturing' },
   title: "Manufacturing IT & Networking Mumbai | Lalani Computers",
   description: "Robust factory-floor Wi-Fi, industrial PCs, and extensive CCTV monitoring. Reliable turnkey IT deployments and AMC for Mumbai's manufacturing sector.",
 };

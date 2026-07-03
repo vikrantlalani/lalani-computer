@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions/amc-support' },
   title: "Corporate IT AMC & Support Services Mumbai | Lalani Computers",
   description: "Comprehensive Annual Maintenance Contracts (AMC), preventative maintenance, and on-site IT troubleshooting for corporate teams in Mumbai.",
 };

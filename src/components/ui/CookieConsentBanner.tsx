@@ -119,6 +119,7 @@ export function CookieConsentBanner() {
                 <button
                   role="switch"
                   aria-checked={analyticsChecked}
+                  aria-label="Toggle analytics cookies"
                   onClick={() => setAnalyticsChecked(!analyticsChecked)}
                   className={`w-10 h-5 rounded-full flex items-center transition-colors duration-200 px-0.5 ${analyticsChecked ? "bg-primary justify-end" : "bg-gray-200 justify-start"}`}
                 >
@@ -135,6 +136,7 @@ export function CookieConsentBanner() {
                 <button
                   role="switch"
                   aria-checked={marketingChecked}
+                  aria-label="Toggle marketing cookies"
                   onClick={() => setMarketingChecked(!marketingChecked)}
                   className={`w-10 h-5 rounded-full flex items-center transition-colors duration-200 px-0.5 ${marketingChecked ? "bg-primary justify-end" : "bg-gray-200 justify-start"}`}
                 >

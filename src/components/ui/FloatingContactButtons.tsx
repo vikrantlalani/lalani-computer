@@ -121,6 +121,7 @@ export function FloatingContactButtons() {
                 href={item.href}
                 target={item.label === "WhatsApp" ? "_blank" : undefined}
                 rel={item.label === "WhatsApp" ? "noopener noreferrer" : undefined}
+                aria-label={item.label}
                 initial={{ opacity: 0, y: 20, scale: 0.5 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.5 }}

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions/networking-wifi' },
   title: "Enterprise Networking & Wi-Fi Design Mumbai | Lalani Computers",
   description: "Corporate routing, switching, seamless Wi-Fi coverage, and secure hardware firewall installations for large facilities.",
 };

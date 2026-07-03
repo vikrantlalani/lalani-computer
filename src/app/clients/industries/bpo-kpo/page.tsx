@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/clients/industries/bpo-kpo' },
   title: "BPO / KPO IT Hardware & Deployments | Lalani Computers",
   description: "Mass deployment of thin clients, commercial headsets, and reliable UPS backups for BPOs and KPOs. Turnkey IT setups and comprehensive AMC in Mumbai.",
 };

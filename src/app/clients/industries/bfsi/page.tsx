@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/clients/industries/bfsi' },
   title: "BFSI IT & Secure Networking Solutions | Lalani Computers",
   description: "Turnkey IT setups, secure endpoint deployments, and high-availability server racks for the BFSI sector. Reliable networking and AMC by Lalani Computers.",
 };

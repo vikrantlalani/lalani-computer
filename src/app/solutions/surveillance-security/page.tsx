@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions/surveillance-security' },
   title: "Corporate Surveillance & Security Infrastructure | Lalani Computers",
   description: "End-to-end CCTV, NVR, and biometric access control installations for offices, schools, and hospitals in Mumbai.",
 };

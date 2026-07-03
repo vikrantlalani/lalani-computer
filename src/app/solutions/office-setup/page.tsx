@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions/office-setup' },
   title: "Complete Office IT Setup & Procurement | Lalani Computers Mumbai",
   description: "End-to-end IT hardware procurement and network infrastructure planning for new corporate offices, startups, and branches in Mumbai.",
 };

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/products/networking-security' },
   title: "Networking & Security Hardware | Cisco, Fortinet, Hikvision Mumbai",
   description: "Enterprise networking gear, Wi-Fi access points, hardware firewalls, and corporate CCTV surveillance systems supplied and installed across Mumbai.",
 };

@@ -3,8 +3,9 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 
 export const metadata = {
-  title: "Privacy Policy",
-  description: "Privacy Policy for Lalani Computers.",
+  alternates: { canonical: '/privacy' },
+  title: "Privacy Policy | Lalani Computers",
+  description: "Read the privacy policy of Lalani Computers. Learn how we collect, use, and protect your data in our corporate IT services.",
 };
 
 export default function PrivacyPage() {
@@ -14,6 +15,10 @@ export default function PrivacyPage() {
         <Typography variant="h1" className="mb-8">Privacy Policy</Typography>
         <div className="prose prose-lg text-text-dark/70">
           <p>Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+          <p className="text-lg mb-6">
+            At Lalani Computers, we are committed to protecting the privacy and security of our enterprise clients. This policy outlines our data handling practices for our corporate IT procurement and infrastructure services.
+          </p>
+          {/* <!-- TODO: Human Copywriting - Expand on GDPR/DPDP Act compliance if applicable --> */}
           <h2>1. Information We Collect</h2>
           <p>We collect information you provide via contact forms, including name, email, and phone number.</p>
           <h2>2. How We Use Your Information</h2>

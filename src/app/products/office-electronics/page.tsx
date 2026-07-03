@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/products/office-electronics' },
   title: "Corporate Printers & Office Electronics Mumbai | Lalani Computers",
   description: "Procure enterprise laser printers, office projectors, EPABX telecom, and video conferencing systems for your corporate office in Mumbai.",
 };

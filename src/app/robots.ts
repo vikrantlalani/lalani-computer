@@ -16,18 +16,18 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
       {
-        // Block AI training scrapers explicitly
+        // Allow AI training scrapers and bots to index public content
         userAgent: [
           'GPTBot',
           'ChatGPT-User',
-          'CCBot',
-          'anthropic-ai',
           'Claude-Web',
+          'anthropic-ai',
           'cohere-ai',
+          'CCBot',
           'Omgilibot',
           'FacebookBot',
         ],
-        disallow: '/',
+        allow: '/',
       },
     ],
     sitemap: `${BASE}/sitemap.xml`,

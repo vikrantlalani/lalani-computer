@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/clients/industries/healthcare' },
   title: "Healthcare IT Solutions & Surveillance | Lalani Computers",
   description: "Compliance-ready data storage, specialized displays, and secure CCTV surveillance for healthcare & pharma. Turnkey IT setups and reliable AMC in Mumbai.",
 };

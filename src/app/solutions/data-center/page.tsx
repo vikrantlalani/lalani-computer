@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions/data-center' },
   title: "Data Center & Server Room Refresh Mumbai | Lalani Computers",
   description: "Legacy system upgrades, tower and rack server deployments, NAS/SAN storage, and server room optimization for corporate clients.",
 };
@@ -75,7 +76,7 @@ export default function DataCenterPage() {
                 </div>
                 <div>
                   <Typography variant="h3">Compute Power</Typography>
-                  <Link href="/products/servers" className="text-primary text-sm font-semibold hover:underline">Explore Servers →</Link>
+                  <Link href="/products/servers" className="text-primary text-sm font-semibold hover:underline" aria-label="Explore Enterprise Servers and Racks">Explore Servers →</Link>
                 </div>
               </div>
               <div className="flex items-center gap-4 mb-6">
@@ -84,7 +85,7 @@ export default function DataCenterPage() {
                 </div>
                 <div>
                   <Typography variant="h3">Data Storage</Typography>
-                  <Link href="/products/servers" className="text-primary text-sm font-semibold hover:underline">Explore Storage →</Link>
+                  <Link href="/products/servers" className="text-primary text-sm font-semibold hover:underline" aria-label="Explore Enterprise Storage Solutions">Explore Storage →</Link>
                 </div>
               </div>
               <div className="flex items-center gap-4">

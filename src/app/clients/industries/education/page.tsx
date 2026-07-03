@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/clients/industries/education' },
   title: "Education IT Solutions & Networking | Lalani Computers",
   description: "Campus-wide networking, lab PCs, and smart projectors for educational institutions. Reliable turnkey IT deployment and AMC services in Mumbai.",
 };

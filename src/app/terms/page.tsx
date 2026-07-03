@@ -3,8 +3,9 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 
 export const metadata = {
-  title: "Terms of Service",
-  description: "Terms of Service for Lalani Computers.",
+  alternates: { canonical: '/terms' },
+  title: "Terms of Service | Lalani Computers",
+  description: "Terms of Service for Lalani Computers. Review the terms governing our enterprise IT procurement and infrastructure solutions.",
 };
 
 export default function TermsPage() {
@@ -14,6 +15,10 @@ export default function TermsPage() {
         <Typography variant="h1" className="mb-8">Terms of Service</Typography>
         <div className="prose prose-lg text-text-dark/70">
           <p>Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+          <p className="text-lg mb-6">
+            Welcome to Lalani Computers. These terms of service outline the rules and regulations for the use of our corporate IT hardware procurement and infrastructure deployment services. By accessing this website and engaging our services, we assume you accept these terms in full.
+          </p>
+          {/* <!-- TODO: Human Copywriting - Expand on B2B return policies, AMC SLAs, and payment terms --> */}
           <h2>1. Introduction</h2>
           <p>Welcome to Lalani Computers. By using our website and services, you agree to these terms.</p>
           <h2>2. Services</h2>

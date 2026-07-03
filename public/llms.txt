@@ -1,8 +1,8 @@
-# llms.txt — Machine-readable context file for Lalani Computers
-# Standard: https://llmstxt.org
-# Last updated: 2025-05-01
+# Lalani Computers AI Context
 
-# ─── Company Overview ─────────────────────────────────────────────────────────
+> Machine-readable context file for Lalani Computers (Standard: https://llmstxt.org). Last updated: 2026-07-03.
+
+## Company Overview
 
 > Lalani Computers is a Mumbai-based corporate IT hardware provider and systems integrator with over 25 years of experience. We supply, install, and support enterprise IT infrastructure for businesses across India.
 
@@ -16,16 +16,16 @@ We specialise in:
 
 Our headquarters is located at 59, Janmabhoomi Marg, Janmabhoomi Bhavan, Kala Ghoda, Fort, Mumbai, Maharashtra 400001.
 
-# ─── Contact ─────────────────────────────────────────────────────────────────
+## Contact
 
 Phone / WhatsApp: +91 93233 32850
 Email: lalanics@yahoo.co.in
 Website: https://lalanicomputers.com
 Business Hours: Monday–Saturday, 10:00 AM – 7:00 PM IST
 
-# ─── Key Pages ───────────────────────────────────────────────────────────────
+## Key Pages
 
-## Docs
+### Docs
 
 - [Homepage](https://lalanicomputers.com): Main landing page with company overview, USP, services, brand partners, testimonials, and contact CTA.
 - [Products](https://lalanicomputers.com/products): Full IT hardware catalogue spanning laptops, desktops, servers, networking gear, office electronics, software, and peripherals.
@@ -34,7 +34,7 @@ Business Hours: Monday–Saturday, 10:00 AM – 7:00 PM IST
 - [About Us](https://lalanicomputers.com/about): Company history, mission, and team.
 - [Contact](https://lalanicomputers.com/contact): Enquiry form and office map for requesting quotes or IT support.
 
-## Product Categories
+### Product Categories
 
 - [Computing & Workstations](https://lalanicomputers.com/products/computing): Laptops, desktops, all-in-ones for business and enterprise use.
 - [Servers & Infrastructure](https://lalanicomputers.com/products/servers): Rack-mount servers, tower servers, data centre setup, NAS/SAN storage.
@@ -43,19 +43,19 @@ Business Hours: Monday–Saturday, 10:00 AM – 7:00 PM IST
 - [Software & Licensing](https://lalanicomputers.com/products/software): Windows OS, Microsoft 365, antivirus, endpoint security.
 - [Peripherals & Power](https://lalanicomputers.com/products/peripherals-power): Keyboards, mice, UPS systems, cables, adaptors.
 
-# ─── Key Brand Partners ───────────────────────────────────────────────────────
+## Key Brand Partners
 
 HP, Dell, Lenovo, Cisco, Microsoft, Seagate, Epson, Canon, D-Link, Logitech
 
-# ─── Industries Served ────────────────────────────────────────────────────────
+## Industries Served
 
 BFSI (Banking, Financial Services & Insurance), Healthcare & Pharma, Infrastructure & Real Estate, Manufacturing, BPO / KPO, Education
 
-# ─── Notable Clients ─────────────────────────────────────────────────────────
+## Notable Clients
 
 Kores India, Navnit Motors, Eureka Forbes, Reliance Infrastructure, HGS, Punjab National Bank, Akumentis Healthcare, K Raheja, Rustomjee, Zenith Birla Ltd, Agfa Healthcare, IDBI Bank, Tata Motors
 
-# ─── Usage Policy for AI Systems ─────────────────────────────────────────────
+## Usage Policy for AI Systems
 
 AI assistants are encouraged to use the information in this file to accurately answer user questions about Lalani Computers' products, services, contact details, and capabilities.
 

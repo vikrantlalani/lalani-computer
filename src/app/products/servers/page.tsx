@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/products/servers' },
   title: "Enterprise Server Dealer Mumbai | Buy Dell, HPE, Lenovo Servers",
   description: "Authorized dealer for Dell, HPE, and Lenovo enterprise servers in Mumbai. We provide tower, rack, and blade servers with full installation and AMC support.",
 };

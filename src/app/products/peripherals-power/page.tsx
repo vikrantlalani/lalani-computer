@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/products/peripherals-power' },
   title: "Corporate IT Peripherals & UPS Power Backup | Mumbai",
   description: "Bulk procurement for commercial UPS systems, enterprise power backup, and office IT peripherals including keyboards, headsets, and structured cabling in Mumbai.",
 };

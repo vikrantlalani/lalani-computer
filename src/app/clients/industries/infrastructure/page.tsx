@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/clients/industries/infrastructure' },
   title: "Real Estate & Infra IT Setups Mumbai | Lalani Computers",
   description: "Reliable site office networking, biometric access, and rugged workstations for infrastructure projects. Turnkey IT deployments and AMC in Mumbai.",
 };

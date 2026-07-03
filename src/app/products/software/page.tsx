@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/products/software' },
   title: "Enterprise Software Licensing & Security | Mumbai",
   description: "Procure corporate software licenses, Microsoft 365, endpoint security (EDR), and backup solutions for your business. Fast deployment and compliance audits.",
 };

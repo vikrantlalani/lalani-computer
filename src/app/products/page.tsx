@@ -10,6 +10,7 @@ import { SwipeHint } from "@/components/ui/SwipeHint";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/products' },
   title: "Corporate IT Hardware Supplier & Server Dealer Mumbai",
   description: "Mumbai's trusted B2B IT hardware supplier. Procure corporate laptops, Dell/HPE enterprise servers, networking gear, and office electronics in bulk with fast local delivery.",
 };
@@ -18,11 +19,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Laptops" },
-    { "@type": "ListItem", "position": 2, "name": "Desktops & Workstations" },
-    { "@type": "ListItem", "position": 3, "name": "Servers & Storage" },
-    { "@type": "ListItem", "position": 4, "name": "Printers & Projectors" },
-    { "@type": "ListItem", "position": 5, "name": "Networking" }
+    { "@type": "ListItem", "position": 1, "url": "https://www.lalanicomputers.com/products/computing", "name": "Laptops" },
+    { "@type": "ListItem", "position": 2, "url": "https://www.lalanicomputers.com/products/computing", "name": "Desktops & Workstations" },
+    { "@type": "ListItem", "position": 3, "url": "https://www.lalanicomputers.com/products/servers", "name": "Servers & Storage" },
+    { "@type": "ListItem", "position": 4, "url": "https://www.lalanicomputers.com/products/office-electronics", "name": "Printers & Projectors" },
+    { "@type": "ListItem", "position": 5, "url": "https://www.lalanicomputers.com/products/networking-security", "name": "Networking" }
   ]
 };
 

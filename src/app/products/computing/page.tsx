@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/products/computing' },
   title: "Corporate Laptops & Desktops | IT Hardware Supplier Mumbai",
   description: "Bulk procurement of corporate laptops, business desktops, and heavy-duty workstations from HP, Dell, Lenovo, and Apple in Mumbai.",
 };
