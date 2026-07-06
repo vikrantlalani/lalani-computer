@@ -44,6 +44,13 @@ export default function SolutionsPage() {
       deliverables: [<span key="1"><Link href="/products/servers" className="hover:text-primary transition-colors underline decoration-primary/30">Tower/Rack Servers</Link></span>, <span key="2"><Link href="/products/servers" className="hover:text-primary transition-colors underline decoration-primary/30">NAS/SAN Storage</Link></span>, "LTO Tape Backup", "Precision Cooling Recommendations"],
       href: "/solutions/data-center"
     },
+    {
+      title: "Custom PC Builds & Workstations",
+      useCase: "Gaming rigs, video editing suites, and heavy-duty corporate modeling.",
+      process: "Component Selection → Assembly → Cable Management → 24hr Stress Test",
+      deliverables: ["NVIDIA RTX GPUs", "High-End Processors (Intel/AMD)", "Custom Liquid Cooling", "Professional Assembly"],
+      href: "/solutions/custom-pc-builds"
+    },
   ];
 
   const stepper = [
