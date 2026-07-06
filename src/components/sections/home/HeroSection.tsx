@@ -91,6 +91,20 @@ export function HeroSection() {
           IT Hardware Peripherals & Turnkey Solutions Delivered Faster Than E‑commerce. Mumbai‑wide fast delivery, Pan‑India shipping, genuine warrantied products.
         </motion.p>
 
+        {/* SEO Contextual Links */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm md:text-base font-medium text-[#E8E6E0]/80"
+        >
+          <a href="/solutions" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Turnkey Office IT Setups in Mumbai</a>
+          <span className="hidden sm:inline opacity-30">•</span>
+          <a href="/products/computing" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Corporate Laptops for Enterprise</a>
+          <span className="hidden sm:inline opacity-30">•</span>
+          <a href="/products/servers" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Enterprise Servers & Data Centers</a>
+        </motion.div>
+
       </div>
 
       {/* Scroll Down Indicator  */}
