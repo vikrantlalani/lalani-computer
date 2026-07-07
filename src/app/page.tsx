@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner. Specializing in corporate laptops, servers, and office networking.",
     url: "https://www.lalanicomputers.com/",
     siteName: "Lalani Computers",
-    images: [{ url: "YOUR_HOMEPAGE_BANNER_URL_HERE.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.lalanicomputers.com/icon.png", width: 1200, height: 630 }],
     locale: "en_IN",
     type: "website",
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lalani Computers | Enterprise IT Hardware & Networking Mumbai",
     description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner.",
-    images: ["YOUR_HOMEPAGE_BANNER_URL_HERE.jpg"],
+    images: ["https://www.lalanicomputers.com/icon.png"],
   },
 };
 

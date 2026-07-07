@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Should your business buy corporate laptops outright or lease them? We break down TCO, tax benefits, and maintenance factors for Indian enterprises.",
     url: "https://www.lalanicomputers.com/products/computing/leasing-vs-buying-corporate-laptops",
     siteName: "Lalani Computers",
-    images: [{ url: "YOUR_LAPTOP_FINANCE_IMAGE_URL_HERE.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.lalanicomputers.com/icon.png", width: 1200, height: 630 }],
     locale: "en_IN",
     type: "article",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Leasing vs. Buying Corporate Laptops in India: Cost Comparison",
     description: "Should your business buy corporate laptops outright or lease them? We break down TCO, tax benefits, and maintenance factors for Indian enterprises.",
-    images: ["YOUR_LAPTOP_FINANCE_IMAGE_URL_HERE.jpg"],
+    images: ["https://www.lalanicomputers.com/icon.png"],
   },
 };
 
