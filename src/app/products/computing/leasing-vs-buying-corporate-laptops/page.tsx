@@ -102,45 +102,45 @@ export default function LeasingVsBuyingPage() {
                   <thead className="bg-warm-bg1">
                     <tr>
                       <th className="px-6 py-4 font-semibold text-text-dark">Feature</th>
-                      <th className="px-6 py-4 font-semibold text-text-dark">Buying Corporate Laptops</th>
-                      <th className="px-6 py-4 font-semibold text-text-dark">Leasing Corporate Laptops</th>
+                      <th className="px-6 py-4 font-semibold text-text-dark">Buying Outright (Lalani Computers)</th>
+                      <th className="px-6 py-4 font-semibold text-text-dark">Leasing Programs</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-primary/10 bg-white">
                     <tr>
+                      <td className="px-6 py-4 font-medium text-text-dark">Asset Ownership</td>
+                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />100% Ownership (No lease restrictions)</td>
+                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />Zero Ownership (Rent forever, return at end)</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-text-dark">Long-term Total Cost</td>
+                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />Lower overall cost (No interest or markup)</td>
+                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />High interest rates built into monthly rent</td>
+                    </tr>
+                    <tr>
                       <td className="px-6 py-4 font-medium text-text-dark">Upfront Cost</td>
-                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />High (Heavy initial capital required)</td>
-                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />Low (Only monthly/quarterly payouts)</td>
+                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />One-time capital outlay</td>
+                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />Low upfront payout</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 font-medium text-text-dark">Hardware Upgrades</td>
-                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />Difficult (Stuck with aging tech for 4-5 yrs)</td>
-                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />Easy (Refresh devices every 2-3 years)</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-text-dark">AMC & Support</td>
-                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />Paid separately after 1-3 year OEM warranty</td>
-                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />Usually bundled into the leasing contract</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-text-dark">Asset Disposal</td>
-                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />Your headache (Must handle e-waste/resale)</td>
-                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />Vendor handles return/disposal at term end</td>
+                      <td className="px-6 py-4 font-medium text-text-dark">Contract & Commitments</td>
+                      <td className="px-6 py-4 text-text-dark/80"><CheckCircle2 className="inline-block w-4 h-4 text-success mr-2" />None (Freedom to resell, upgrade or discard)</td>
+                      <td className="px-6 py-4 text-text-dark/80"><XCircle className="inline-block w-4 h-4 text-error mr-2" />Rigid contracts & penalties for early return</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              <h2>Why Lalani Computers Offers the Best of Both Worlds</h2>
-              <p>At Lalani Computers, we understand that every enterprise has a different cash flow strategy. Whether a client wants to buy 500 laptops outright at aggressive wholesale pricing to leverage depreciation, or structure a flexible corporate leasing deal, we are your partner.</p>
-              <p>Regardless of your purchasing choice, Lalani Computers handles the heavy lifting: custom OS imaging, precise asset tagging, physical deployment, and comprehensive Annual Maintenance Contracts (AMC) across Mumbai.</p>
+              <h2>Why Buying Outright from Lalani Computers Wins</h2>
+              <p>At Lalani Computers, we do not lock our clients into restrictive, high-interest leasing contracts. Whether you are purchasing a single premium laptop for retail use, or buying in bulk for your enterprise (Capex), we provide unmatched outright purchase pricing. This allows you to claim maximum depreciation benefits while maintaining 100% ownership of your hardware assets.</p>
+              <p>When you buy your devices from us, there are no hidden end-of-term return fees. For corporate clients, we handle the heavy lifting: custom OS imaging, precise asset tagging, physical deployment, and comprehensive Annual Maintenance Contracts (AMC) across Mumbai.</p>
               
             </div>
             
             <div className="mt-12 p-8 bg-warm-bg1 border border-primary/10 rounded-2xl flex flex-col items-center text-center">
-              <Typography variant="h3" className="mb-3">Need to equip your workforce?</Typography>
+              <Typography variant="h3" className="mb-3">Looking for a single laptop or a bulk fleet?</Typography>
               <p className="text-text-dark/80 mb-6 max-w-lg">
-                Speak with our enterprise sales team. We supply HP, Dell, Lenovo, and Apple fleets with customized pricing structures.
+                Visit our retail store or speak with our enterprise sales team. We supply HP, Dell, Lenovo, and Apple devices with aggressive pricing structures for all buyers.
               </p>
               <a 
                 href="https://wa.me/919323332850?text=Hi,%20I%20am%20looking%20for%20bulk%20pricing%20quotes%20for%20corporate%20laptops" 
@@ -149,7 +149,7 @@ export default function LeasingVsBuyingPage() {
               >
                 <Button size="lg" className="flex items-center gap-2 bg-[#25D366] text-white hover:bg-[#20b858] border-none shadow-lg shadow-[#25D366]/20">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                  Request a Bulk Quote Now
+                  Get Pricing on WhatsApp
                 </Button>
               </a>
             </div>

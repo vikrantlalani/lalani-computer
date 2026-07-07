@@ -103,16 +103,27 @@ export default function DataCenterPage() {
       </Section>
 
       <Section variant="light" className="border-t border-primary/10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <Typography variant="h2" className="mb-4">Building a Server Room?</Typography>
-            <Typography variant="lead" className="mb-8 max-w-2xl mx-auto">
-              Setting up an on-premise datacenter or server closet from scratch? Read our SME deployment guide to ensure stability and safety.
+            <Typography variant="h2" className="text-center mb-4">Related Guides</Typography>
+            <Typography variant="lead" className="text-center mb-12 max-w-2xl mx-auto">
+              Read our expert advice on building secure, scalable data centers.
             </Typography>
-            <Link href="/solutions/data-center/sme-server-room-guide">
-              <Button size="lg">Read the SME Server Room Guide</Button>
-            </Link>
           </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { title: "How to Build an SME Server Room", url: "/solutions/data-center/sme-server-room-guide" },
+            ].map((guide, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <Link href={guide.url} className="block group bg-white rounded-xl p-6 border border-primary/10 hover:shadow-md hover:border-primary/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <Typography variant="h3" className="text-lg group-hover:text-primary transition-colors">{guide.title}</Typography>
+                    <svg className="w-5 h-5 text-primary/50 group-hover:text-primary transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </Section>
     </>
