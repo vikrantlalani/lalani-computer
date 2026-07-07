@@ -101,6 +101,20 @@ export default function DataCenterPage() {
           </div>
         </div>
       </Section>
+
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn>
+            <Typography variant="h2" className="mb-4">Building a Server Room?</Typography>
+            <Typography variant="lead" className="mb-8 max-w-2xl mx-auto">
+              Setting up an on-premise datacenter or server closet from scratch? Read our SME deployment guide to ensure stability and safety.
+            </Typography>
+            <Link href="/solutions/data-center/sme-server-room-guide">
+              <Button size="lg">Read the SME Server Room Guide</Button>
+            </Link>
+          </FadeIn>
+        </div>
+      </Section>
     </>
   );
 }

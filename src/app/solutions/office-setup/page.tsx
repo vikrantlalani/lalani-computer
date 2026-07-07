@@ -101,6 +101,20 @@ export default function OfficeSetupPage() {
           </div>
         </div>
       </Section>
+
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn>
+            <Typography variant="h2" className="mb-4">Planning Your Office Move?</Typography>
+            <Typography variant="lead" className="mb-8 max-w-2xl mx-auto">
+              Setting up a brand new office in Mumbai? Read our step-by-step checklist to ensure you don't miss any critical IT infrastructure details.
+            </Typography>
+            <Link href="/solutions/office-setup/startup-checklist-2026">
+              <Button size="lg">Read the 2026 Startup IT Checklist</Button>
+            </Link>
+          </FadeIn>
+        </div>
+      </Section>
     </>
   );
 }

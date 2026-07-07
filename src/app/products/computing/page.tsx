@@ -158,6 +158,7 @@ export default function ComputingPage() {
               { title: "Best Laptops Under ₹60,000", url: "/products/computing/best-laptops-under-60000" },
               { title: "Best Laptops Under ₹75,000", url: "/products/computing/best-laptops-under-75000" },
               { title: "Top 10 Laptop Buying Guide", url: "/products/computing/laptop-buying-guide" },
+              { title: "Leasing vs. Buying Laptops in India", url: "/products/computing/leasing-vs-buying-corporate-laptops" },
             ].map((guide, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <Link href={guide.url} className="block group bg-white rounded-xl p-6 border border-primary/10 hover:shadow-md hover:border-primary/30 transition-all">
