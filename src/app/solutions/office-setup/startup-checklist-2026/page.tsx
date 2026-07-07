@@ -12,6 +12,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/solutions/office-setup/startup-checklist-2026",
   },
+  openGraph: {
+    title: "The Ultimate 2026 Office IT Setup Checklist for Mumbai Startups",
+    description: "Moving to a new office? Ensure your startup is ready with our comprehensive IT hardware and networking checklist.",
+    url: "https://www.lalanicomputers.com/solutions/office-setup/startup-checklist-2026",
+    siteName: "Lalani Computers",
+    images: [{ url: "YOUR_CHECKLIST_IMAGE_URL_HERE.jpg", width: 1200, height: 630 }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Ultimate 2026 Office IT Setup Checklist for Mumbai Startups",
+    description: "Moving to a new office? Ensure your startup is ready with our comprehensive IT hardware and networking checklist.",
+    images: ["YOUR_CHECKLIST_IMAGE_URL_HERE.jpg"],
+  },
 };
 
 export default function StartupChecklistPage() {

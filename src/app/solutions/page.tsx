@@ -10,8 +10,23 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions' },
-  title: "Turnkey IT Solutions & New Office Setup in Mumbai",
-  description: "End-to-end corporate IT infrastructure deployment in Mumbai. We provide structured cabling, server room setup, Wi-Fi networking, and comprehensive IT AMC services.",
+  title: "Enterprise IT Solutions & Infrastructure | Lalani Computers",
+  description: "End-to-end B2B IT solutions including data center refreshes, turnkey office setups, and structural cabling for Mumbai enterprises.",
+  openGraph: {
+    title: "Enterprise IT Solutions & Infrastructure | Lalani Computers",
+    description: "End-to-end B2B IT solutions including data center refreshes, turnkey office setups, and structural cabling for Mumbai enterprises.",
+    url: "https://www.lalanicomputers.com/solutions",
+    siteName: "Lalani Computers",
+    images: [{ url: "YOUR_SOLUTIONS_BANNER_URL_HERE.jpg", width: 1200, height: 630 }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enterprise IT Solutions & Infrastructure | Lalani Computers",
+    description: "End-to-end B2B IT solutions including data center refreshes and turnkey office setups.",
+    images: ["YOUR_SOLUTIONS_BANNER_URL_HERE.jpg"],
+  },
 };
 
 export default function SolutionsPage() {

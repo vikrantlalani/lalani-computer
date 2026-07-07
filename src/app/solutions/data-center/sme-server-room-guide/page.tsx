@@ -12,6 +12,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/solutions/data-center/sme-server-room-guide",
   },
+  openGraph: {
+    title: "How to Build a Reliable Server Room from Scratch: SME Guide",
+    description: "A complete guide to building a secure, scalable, and fully optimized on-premise server room for your growing SME.",
+    url: "https://www.lalanicomputers.com/solutions/data-center/sme-server-room-guide",
+    siteName: "Lalani Computers",
+    images: [{ url: "YOUR_SERVER_ROOM_IMAGE_URL_HERE.jpg", width: 1200, height: 630 }],
+    locale: "en_IN",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Build a Reliable Server Room from Scratch: SME Guide",
+    description: "A complete guide to building a secure, scalable, and fully optimized on-premise server room for your growing SME.",
+    images: ["YOUR_SERVER_ROOM_IMAGE_URL_HERE.jpg"],
+  },
 };
 
 export default function ServerRoomGuidePage() {

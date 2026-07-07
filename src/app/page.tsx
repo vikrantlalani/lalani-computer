@@ -40,12 +40,23 @@ const RequirementCTASection = dynamic(
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
-  title: "Corporate IT Hardware & Solutions | Lalani Computers",
-  description: "Mumbai's trusted partner for enterprise IT hardware, peripherals, turnkey office setups, and AMC services. Over 30 years of excellence.",
+  title: "Lalani Computers | Enterprise IT Hardware & Networking Mumbai",
+  description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner. Specializing in corporate laptops, servers, and office networking.",
   openGraph: {
-    title: "Corporate IT Hardware & Solutions | Lalani Computers",
-    description: "Mumbai's trusted partner for enterprise IT hardware, peripherals, turnkey office setups, and AMC services.",
-  }
+    title: "Lalani Computers | Enterprise IT Hardware & Networking Mumbai",
+    description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner. Specializing in corporate laptops, servers, and office networking.",
+    url: "https://www.lalanicomputers.com/",
+    siteName: "Lalani Computers",
+    images: [{ url: "YOUR_HOMEPAGE_BANNER_URL_HERE.jpg", width: 1200, height: 630 }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lalani Computers | Enterprise IT Hardware & Networking Mumbai",
+    description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner.",
+    images: ["YOUR_HOMEPAGE_BANNER_URL_HERE.jpg"],
+  },
 };
 
 const jsonLd = {
