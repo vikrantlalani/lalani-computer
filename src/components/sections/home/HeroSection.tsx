@@ -13,7 +13,7 @@ function WordReveal({ text, delay = 0, isLoaded }: { text: string; delay?: numbe
   return (
     <span className="inline-block" aria-label={text}>
       {words.map((word, i) => (
-        <span key={i} aria-hidden="true" className="inline-block overflow-hidden">
+        <span key={i} className="inline-block overflow-hidden">
           <motion.span
             className="inline-block"
             initial={{ y: "110%", opacity: 0, rotateX: 40, filter: "blur(12px)" }}
@@ -55,7 +55,6 @@ export function HeroSection() {
           muted
           playsInline
           preload="metadata"
-          poster="https://res.cloudinary.com/dzc0mfs9z/image/upload/v1783603085/hero-poster.jpg_gxnozm.png"
           className="absolute inset-0 w-full h-full object-cover"
           src="https://res.cloudinary.com/dzc0mfs9z/video/upload/q_auto,f_auto/v1/Untitled_design_uozjqh.mp4"
         />
@@ -109,8 +108,7 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Down Indicator  */}
-      <motion.button
-        aria-label="Scroll down to content"
+      <motion.div
         initial={{ opacity: 0 }}
         animate={isLoaded ? { opacity: 1 } : {}}
         transition={{ delay: 1.5, duration: 1 }}
@@ -132,7 +130,7 @@ export function HeroSection() {
         >
           <ChevronDown className="w-5 h-5 opacity-80" />
         </motion.div>
-      </motion.button>
+      </motion.div>
     </section>
   );
 }

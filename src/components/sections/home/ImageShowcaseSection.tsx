@@ -47,11 +47,10 @@ const imageVariants = {
 function AnimatedWords({ text, className }: { text: string; className?: string }) {
   const words = text.split(" ");
   return (
-    <span className={className} aria-label={text}>
+    <span className={className}>
       {words.map((word, i) => (
         <motion.span
           key={i}
-          aria-hidden="true"
           className="inline-block mr-[0.3em]"
           initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
