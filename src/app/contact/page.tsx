@@ -28,12 +28,14 @@ const jsonLd = [
   },
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ComputerStore"],
     "name": "Lalani Computers",
+    "description": "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner.",
     "image": "https://www.lalanicomputers.com/icon.png",
     "@id": "https://www.lalanicomputers.com",
     "url": "https://www.lalanicomputers.com",
     "telephone": "+919323332850",
+    "priceRange": "₹₹₹",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "59, Janmabhoomi Marg, Janmabhoomi Bhavan, Fort",

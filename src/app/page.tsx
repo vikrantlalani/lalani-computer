@@ -61,12 +61,14 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ComputerStore"],
   "name": "Lalani Computers",
+  "description": "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner. Specializing in corporate laptops, servers, and office networking.",
   "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
   "@id": "https://www.lalanicomputers.com",
   "url": "https://www.lalanicomputers.com",
   "telephone": "+919323332850",
+  "priceRange": "₹₹₹",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "59, Janmabhoomi Marg, Janmabhoomi Bhavan, Fort",
@@ -74,7 +76,12 @@ const jsonLd = {
     "postalCode": "400001",
     "addressCountry": "IN"
   },
-  "areaServed": ["Mumbai", "India"],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.9334801,
+    "longitude": 72.833117
+  },
+  "areaServed": ["Mumbai", "Navi Mumbai", "Thane", "India"],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
