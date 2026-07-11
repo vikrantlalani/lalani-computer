@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Monitor, Network, Shield } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions/office-setup' },
@@ -22,8 +23,58 @@ const deliverables = [
 ];
 
 export default function OfficeSetupPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does your turnkey office IT setup include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We act as your single point of contact. We handle everything from supplying corporate laptops and deploying server racks to running network cables and installing biometric attendance/CCTV systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you deploy IT infrastructure for a new office in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because we hold massive local inventory, we can typically procure, deliver, and deploy standard IT infrastructure for a 50-person office within 7 to 14 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a complete turnkey office IT setup cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The final cost varies based on your headcount and hardware preferences (e.g., standard desktops vs. high-performance workstations). We provide transparent Bill of Materials (BOM) pricing."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "What does your turnkey office IT setup include?",
+      answer: "We act as your single point of contact. We handle everything from supplying corporate laptops and deploying server racks to running network cables and installing biometric attendance/CCTV systems."
+    },
+    {
+      question: "How fast can you deploy IT infrastructure for a new office in Mumbai?",
+      answer: "Because we hold massive local inventory, we can typically procure, deliver, and deploy standard IT infrastructure for a 50-person office within 7 to 14 days."
+    },
+    {
+      question: "How much does a complete turnkey office IT setup cost?",
+      answer: <>The final cost varies based on your headcount and hardware preferences (e.g., standard desktops vs. high-performance workstations). We provide transparent Bill of Materials (BOM) pricing. <Link href="/contact" className="text-primary hover:underline font-medium">Get a customized office setup estimate.</Link></>
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -100,6 +151,19 @@ export default function OfficeSetupPage() {
             </FadeIn>
           </div>
         </div>
+      </Section>
+
+      <Section variant="white" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Common questions about deploying a new corporate office setup.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
 
       <Section variant="light" className="border-t border-primary/10">

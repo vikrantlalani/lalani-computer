@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   title: "Best PC Builder in Mumbai: Custom Gaming & Office Workstations",
@@ -16,21 +17,68 @@ export const metadata: Metadata = {
 };
 
 export default function CustomPCBuildsPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Custom PC Building",
-    "provider": {
-      "@type": "Organization",
-      "name": "Lalani Computers",
-      "logo": "https://www.lalanicomputers.com/icon.png"
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Custom PC Building",
+      "provider": {
+        "@type": "Organization",
+        "name": "Lalani Computers",
+        "logo": "https://www.lalanicomputers.com/icon.png"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Mumbai"
+      },
+      "description": metadata.description,
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Mumbai"
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why buy a custom PC from Lalani Computers instead of standard Lamington Road shops?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With over 30 years of corporate IT experience, we guarantee 100% genuine components, transparent Bill of Materials (BOM) pricing, and enterprise-grade reliability without the shady practices often found in unorganized markets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should my office use pre-built desktops or custom-built PCs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While branded desktops like Dell OptiPlex are great for standard use, power users (like 3D animators or financial analysts) require custom workstations. We build both high-end rigs and cost-effective bulk custom PCs for BPO/KPO setups."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do custom assembled PCs come with a warranty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Every individual component carries its official OEM warranty. Furthermore, we run a strict 24-hour stress test on every rig before delivery to ensure zero day-one failures."
+          }
+        }
+      ]
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: "Why buy a custom PC from Lalani Computers instead of standard Lamington Road shops?",
+      answer: "With over 30 years of corporate IT experience, we guarantee 100% genuine components, transparent Bill of Materials (BOM) pricing, and enterprise-grade reliability without the shady practices often found in unorganized markets."
     },
-    "description": metadata.description,
-  };
+    {
+      question: "Should my office use pre-built desktops or custom-built PCs?",
+      answer: "While branded desktops like Dell OptiPlex are great for standard use, power users (like 3D animators or financial analysts) require custom workstations. We build both high-end rigs and cost-effective bulk custom PCs for BPO/KPO setups."
+    },
+    {
+      question: "Do custom assembled PCs come with a warranty?",
+      answer: "Absolutely. Every individual component carries its official OEM warranty. Furthermore, we run a strict 24-hour stress test on every rig before delivery to ensure zero day-one failures."
+    }
+  ];
 
   return (
     <>
@@ -104,6 +152,14 @@ export default function CustomPCBuildsPage() {
               <p><strong>3. Assembly & Cable Management:</strong> We don't just plug things in; we ensure optimal airflow and stunning cable management so your PC runs cool and looks great.</p>
               <p><strong>4. Stress Testing:</strong> Every custom PC undergoes a 24-hour stress test (CPU, GPU, and RAM) before delivery to ensure zero blue screens on day one.</p>
               
+            </div>
+
+            <div className="mt-16 mb-8">
+              <div className="text-center mb-8">
+                <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+                <Typography variant="body" className="opacity-80">Common questions about custom PC building and components.</Typography>
+              </div>
+              <FAQAccordion items={faqItems} />
             </div>
             
             <div className="mt-12 p-8 bg-warm-bg1 border border-primary/10 rounded-2xl flex flex-col items-center text-center">

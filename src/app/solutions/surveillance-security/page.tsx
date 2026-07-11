@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Camera, Fingerprint, Activity } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions/surveillance-security' },
@@ -22,8 +23,58 @@ const deliverables = [
 ];
 
 export default function SurveillanceSecurityPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you provide professional CCTV installation for offices in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our certified technicians conduct comprehensive site surveys to eliminate blind spots and install high-resolution IP cameras with surveillance-grade NVR storage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which CCTV brands do you recommend for corporate security?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We install and configure enterprise-grade systems from trusted brands like Hikvision, CP Plus, and Dahua, ensuring secure remote mobile viewing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a corporate office CCTV installation cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing is based on the total number of cameras, NVR hard drive capacity (recording retention days), and structured cabling length."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "Do you provide professional CCTV installation for offices in Mumbai?",
+      answer: "Yes, our certified technicians conduct comprehensive site surveys to eliminate blind spots and install high-resolution IP cameras with surveillance-grade NVR storage."
+    },
+    {
+      question: "Which CCTV brands do you recommend for corporate security?",
+      answer: "We install and configure enterprise-grade systems from trusted brands like Hikvision, CP Plus, and Dahua, ensuring secure remote mobile viewing."
+    },
+    {
+      question: "How much does a corporate office CCTV installation cost?",
+      answer: <>Pricing is based on the total number of cameras, NVR hard drive capacity (recording retention days), and structured cabling length. <Link href="/contact" className="text-primary hover:underline font-medium">Contact us for a free security audit and estimate.</Link></>
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -100,6 +151,19 @@ export default function SurveillanceSecurityPage() {
             </FadeIn>
           </div>
         </div>
+      </Section>
+
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Common questions about corporate CCTV and access control.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
     </>
   );

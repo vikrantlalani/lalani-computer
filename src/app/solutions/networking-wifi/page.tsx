@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Wifi, ShieldCheck, Cable } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions/networking-wifi' },
@@ -22,8 +23,58 @@ const deliverables = [
 ];
 
 export default function NetworkingWifiPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you prevent 'spaghetti cabling' in office networks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We follow strict structured cabling standards using 100% pure solid copper Cat6/Cat6A. Our engineers provide meticulous rack dressing, color-coded patching, and clear labeling for easy future maintenance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you secure our office network with a hardware firewall?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We deploy Next-Generation Firewalls (NGFW) and UTM solutions from Fortinet and Sophos to protect your perimeter and enable secure remote VPN access."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a corporate networking and Wi-Fi setup cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing depends entirely on your office square footage, user density, and routing complexity. We design scalable network architectures to fit your exact budget."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "How do you prevent 'spaghetti cabling' in office networks?",
+      answer: "We follow strict structured cabling standards using 100% pure solid copper Cat6/Cat6A. Our engineers provide meticulous rack dressing, color-coded patching, and clear labeling for easy future maintenance."
+    },
+    {
+      question: "Can you secure our office network with a hardware firewall?",
+      answer: "Absolutely. We deploy Next-Generation Firewalls (NGFW) and UTM solutions from Fortinet and Sophos to protect your perimeter and enable secure remote VPN access."
+    },
+    {
+      question: "How much does a corporate networking and Wi-Fi setup cost?",
+      answer: <>Pricing depends entirely on your office square footage, user density, and routing complexity. We design scalable network architectures to fit your exact budget. <Link href="/contact" className="text-primary hover:underline font-medium">Contact us today for a free site audit and estimate.</Link></>
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -100,6 +151,19 @@ export default function NetworkingWifiPage() {
             </FadeIn>
           </div>
         </div>
+      </Section>
+
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Common questions about corporate networking in Mumbai.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
     </>
   );

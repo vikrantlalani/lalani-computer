@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Terminal, ShieldAlert, Cloud, Database } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/products/software' },
@@ -50,8 +51,58 @@ const advantages = [
 ];
 
 export default function SoftwarePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you sell bulk Microsoft 365 licenses for corporate teams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, as authorized partners, we provide bulk volume licensing for Microsoft 365, Windows Server, and Office standard editions with dedicated local billing support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you assist with enterprise antivirus and endpoint protection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we deploy centralized endpoint security solutions like CrowdStrike and Sophos to protect your entire corporate network from ransomware and data breaches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is enterprise software volume licensing priced?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Volume licensing costs scale based on your total user seat count and required subscription tiers. We leverage our authorized OEM partner status to secure the best bulk discounts for your team."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "Do you sell bulk Microsoft 365 licenses for corporate teams?",
+      answer: "Yes, as authorized partners, we provide bulk volume licensing for Microsoft 365, Windows Server, and Office standard editions with dedicated local billing support."
+    },
+    {
+      question: "Can you assist with enterprise antivirus and endpoint protection?",
+      answer: "Yes, we deploy centralized endpoint security solutions like CrowdStrike and Sophos to protect your entire corporate network from ransomware and data breaches."
+    },
+    {
+      question: "How is enterprise software volume licensing priced?",
+      answer: <>Volume licensing costs scale based on your total user seat count and required subscription tiers. We leverage our authorized OEM partner status to secure the best bulk discounts for your team. <Link href="/contact" className="text-primary hover:underline font-medium">Request a custom software quote.</Link></>
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -142,6 +193,19 @@ export default function SoftwarePage() {
             ))}
           </div>
         </div>
+      </Section>
+
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Common questions about enterprise software and volume licensing.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
     </>
   );

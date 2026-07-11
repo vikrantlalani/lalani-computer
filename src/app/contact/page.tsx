@@ -9,22 +9,52 @@ import { MapPin, Phone, Mail, Clock, CheckCircle2, AlertCircle } from "lucide-re
 
 import { Metadata } from "next";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact Lalani Computers",
-  "description": "Get in touch for custom IT hardware quotes.",
-  "url": "https://lalanicomputers.com/contact",
-  "mainEntity": {
-    "@type": "Organization",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+919323332850",
-      "contactType": "sales",
-      "email": "lalanics@yahoo.co.in"
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Lalani Computers",
+    "description": "Get in touch for custom IT hardware quotes.",
+    "url": "https://lalanicomputers.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+919323332850",
+        "contactType": "sales",
+        "email": "lalanics@yahoo.co.in"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Lalani Computers",
+    "image": "https://www.lalanicomputers.com/icon.png",
+    "@id": "https://www.lalanicomputers.com",
+    "url": "https://www.lalanicomputers.com",
+    "telephone": "+919323332850",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "59, Janmabhoomi Marg, Janmabhoomi Bhavan, Fort",
+      "addressLocality": "Mumbai",
+      "postalCode": "400001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 18.9334801,
+      "longitude": 72.833117
+    },
+    "areaServed": ["Mumbai", "Navi Mumbai", "Thane", "India"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "19:00"
     }
   }
-};
+];
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);

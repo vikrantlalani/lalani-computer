@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Battery, Keyboard, Cable, Headphones } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/products/peripherals-power' },
@@ -50,8 +51,58 @@ const advantages = [
 ];
 
 export default function PeripheralsPowerPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you supply and maintain corporate UPS systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide enterprise UPS systems from APC and Vertiv, including routine AMC battery maintenance and replacements to prevent swelling and unexpected downtime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you supply bulk corporate printers and original toner cartridges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we supply enterprise-grade laser printers from HP, Canon, and Epson, along with guaranteed 100% genuine OEM toner and ink supplies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a corporate UPS or bulk peripheral order cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing scales based on your power load (kVA) requirements for UPS, or the specific printer models required for your volume."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "Do you supply and maintain corporate UPS systems?",
+      answer: "Yes, we provide enterprise UPS systems from APC and Vertiv, including routine AMC battery maintenance and replacements to prevent swelling and unexpected downtime."
+    },
+    {
+      question: "Do you supply bulk corporate printers and original toner cartridges?",
+      answer: "Yes, we supply enterprise-grade laser printers from HP, Canon, and Epson, along with guaranteed 100% genuine OEM toner and ink supplies."
+    },
+    {
+      question: "How much does a corporate UPS or bulk peripheral order cost?",
+      answer: <>Pricing scales based on your power load (kVA) requirements for UPS, or the specific printer models required for your volume. <Link href="/contact" className="text-primary hover:underline font-medium">Contact us for a custom corporate quote.</Link></>
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -142,6 +193,19 @@ export default function PeripheralsPowerPage() {
             ))}
           </div>
         </div>
+      </Section>
+
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Common questions about UPS power backup and corporate IT peripherals.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
     </>
   );

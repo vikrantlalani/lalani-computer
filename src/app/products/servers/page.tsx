@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Server, Database, Activity, HardDrive } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/products/servers' },
@@ -50,8 +51,58 @@ const advantages = [
 ];
 
 export default function ServersPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can an enterprise server be deployed in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlike standard online suppliers, Lalani Computers maintains a massive local inventory in Fort, Mumbai. Depending on the configuration, we can deliver and deploy Dell, HPE, and Lenovo servers within 24 to 48 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide post-warranty support for enterprise servers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Beyond the standard OEM warranty, we offer comprehensive Annual Maintenance Contracts (AMC) to ensure your mission-critical hardware experiences zero downtime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide on-site server rack installation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our certified engineers handle complete on-site racking, stacking, OS deployment, and custom RAID configurations across Mumbai, Navi Mumbai, and Thane."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "How quickly can an enterprise server be deployed in Mumbai?",
+      answer: "Unlike standard online suppliers, Lalani Computers maintains a massive local inventory in Fort, Mumbai. Depending on the configuration, we can deliver and deploy Dell, HPE, and Lenovo servers within 24 to 48 hours."
+    },
+    {
+      question: "Do you provide post-warranty support for enterprise servers?",
+      answer: <>Yes. Beyond the standard OEM warranty, we offer comprehensive <Link href="/solutions" className="text-primary hover:underline font-medium">Annual Maintenance Contracts (AMC)</Link> to ensure your mission-critical hardware experiences zero downtime.</>
+    },
+    {
+      question: "Do you provide on-site server rack installation?",
+      answer: "Yes, our certified engineers handle complete on-site racking, stacking, OS deployment, and custom RAID configurations across Mumbai, Navi Mumbai, and Thane."
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -146,6 +197,20 @@ export default function ServersPage() {
             ))}
           </div>
         </div>
+      </Section>
+
+      {/* FAQ Section */}
+      <Section variant="white" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Everything you need to know about procuring enterprise servers in Mumbai.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
 
       {/* CTA */}

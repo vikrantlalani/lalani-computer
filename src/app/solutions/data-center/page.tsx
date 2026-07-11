@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Server, Database, Thermometer } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions/data-center' },
@@ -22,8 +23,58 @@ const deliverables = [
 ];
 
 export default function DataCenterPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you prevent server room overheating and HVAC failures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We design precision cooling systems (PAC) tied to redundant UPS power, complete with independent physical monitoring alarms so your team is instantly notified of temperature spikes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What brands of server racks and power systems do you supply?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We deploy enterprise-grade infrastructure from APC by Schneider Electric and Vertiv to guarantee robust UPS power backup and smart rack management."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does it cost to build a small corporate server room?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Costs scale heavily based on power density, cooling tonnage, and required redundancy levels. We provide detailed, transparent BOM pricing."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "How do you prevent server room overheating and HVAC failures?",
+      answer: "We design precision cooling systems (PAC) tied to redundant UPS power, complete with independent physical monitoring alarms so your team is instantly notified of temperature spikes."
+    },
+    {
+      question: "What brands of server racks and power systems do you supply?",
+      answer: "We deploy enterprise-grade infrastructure from APC by Schneider Electric and Vertiv to guarantee robust UPS power backup and smart rack management."
+    },
+    {
+      question: "How much does it cost to build a small corporate server room?",
+      answer: <>Costs scale heavily based on power density, cooling tonnage, and required redundancy levels. We provide detailed, transparent BOM pricing. <Link href="/contact" className="text-primary hover:underline font-medium">Contact us for a free site survey.</Link></>
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -100,6 +151,19 @@ export default function DataCenterPage() {
             </FadeIn>
           </div>
         </div>
+      </Section>
+
+      <Section variant="white" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Common questions about building and upgrading SME data centers.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
 
       <Section variant="light" className="border-t border-primary/10">

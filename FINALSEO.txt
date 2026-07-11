@@ -1,0 +1,760 @@
+---
+name: seo-full-stack
+description: End-to-end SEO strategy and implementation skill covering discovery audit, technical SEO, on-page optimization, off-page signals, content architecture, schema markup, and deployment verification. Use this skill for any project where the goal is to improve search engine rankings, increase organic traffic, or establish a site as a local authority. Covers both the planning phase and the hands-on code execution phase.
+---
+
+# Full-Stack SEO Implementation Skill
+
+This skill guides the complete SEO lifecycle for a web project: from the initial discovery audit, through technical and content implementation, to final deployment verification and monitoring. It is derived from real-world execution and covers all edge cases encountered during live deployments.
+
+---
+
+## Hard Constraints
+- **Do not redesign the website.**
+- **Do not change branding, colors, fonts, spacing, styling, visual identity, or UI theme.**
+- **Do not modify animations, transitions, hover effects, motion, or interactive frontend behavior.**
+- **Do not replace, remove, or redesign images unless explicitly instructed.**
+- **Do not rebuild the website from scratch.**
+- **Do not make visual layout changes** unless absolutely necessary for SEO clarity or content readability, and if you recommend such a change, list it separately as optional and do not implement it automatically.
+- **Do not change URLs without strong SEO justification and a redirect plan.**
+- **Do not delete high-value existing content without flagging it first.**
+- **In Phases 1–4, do not implement code changes automatically.** Only audit, analyze, map, recommend, and prepare.
+- **Implement changes only in Phase 5 after approval.**
+
+## Project Goal
+Improve the entire website’s SEO, content quality, page structure, internal linking, and search visibility based on the full business offering.
+
+---
+
+# PART 1: SEO STRATEGY & DISCOVERY
+
+---
+
+## PHASE 1: Discovery and Audit (Full Website Discovery)
+
+**Tasks:**
+- Crawl the entire website and inspect every accessible page.
+- Extract all URLs, titles, meta descriptions, canonical tags, headings, body content, images, alt text, schema, internal links, and page templates/components.
+- Identify every service, product category, business offering, and topic currently covered on the website.
+- Detect technical SEO issues, on-page SEO issues, content issues, and UX/content-structure issues.
+- Flag pages with keyword stuffing, weak readability, thin content, duplicate metadata, poor heading hierarchy, missing alt text, or weak internal linking.
+
+**Deliverables:**
+- Full URL inventory
+- Service/topic inventory
+- SEO issue list
+- Content issue list
+- UX/content-structure issue list
+- Priority problems summary
+
+**Important Rules for Phase 1:**
+- **Do not rewrite anything in this phase.**
+- **Do not change code in this phase.**
+- **Stop after Phase 1 and present findings.**
+
+Before writing a single line of code or content, perform a full audit using the checklists below. This is non-negotiable.
+
+### 1.1 URL Inventory
+
+Map every publicly accessible URL on the site:
+
+| URL Path | Type | Title Tag | Meta Description | Issues Found |
+| :--- | :--- | :--- | :--- | :--- |
+| `/` | Static | ... | ... | ... |
+| `/about` | Static | ... | ... | ... |
+| `/contact` | Static | ... | ... | ... |
+| `/[service]` | Dynamic | ... | ... | ... |
+| `/blogs/[slug]` | Dynamic | ... | ... | ... |
+
+**What to check for each URL:**
+- Is there a unique, keyword-rich title tag (50-60 chars)?
+- Is there a compelling meta description (140-160 chars)?
+- Is there exactly one H1 per page?
+- Does the URL slug itself contain the target keyword?
+- Is the page indexed (not blocked by `robots.txt` or `noindex`)?
+
+### 1.2 Service and Topic Inventory
+
+List every primary business offering or topic the site covers. This becomes the master list for landing pages.
+
+**The "Single Page Service Trap" (Most Common Critical Issue):**
+If a business offers 10+ services but they all live on ONE page (e.g., `/services`), that is the single biggest SEO failure possible. Google ranks PAGES, not websites. Each service needs its own URL. A client offering dental implants, teeth whitening, and pediatric care needs three separate pages, not three paragraphs on one page.
+
+### 1.3 Technical SEO Checklist
+
+Run through every item:
+
+- [ ] **Sitemap:** Is there a valid `sitemap.xml`? Does it include all service pages, blog posts, and key static pages? Is it submitted to Google Search Console?
+- [ ] **Robots.txt:** Is it blocking any important pages by mistake?
+- [ ] **Canonical Tags:** Are canonical URLs explicitly set to avoid duplicate content (www vs non-www, trailing slash variants)?
+- [ ] **Structured Data / Schema:** Is there global `LocalBusiness` or `Organization` schema? Are `Service`, `FAQPage`, `Article`, or `BreadcrumbList` schemas present where applicable?
+- [ ] **Page Speed:** Measure Core Web Vitals (LCP, CLS, FID/INP). Use Google PageSpeed Insights.
+- [ ] **Mobile Responsiveness:** Test at 375px, 414px, 768px.
+- [ ] **HTTPS:** Is the entire site served over HTTPS?
+- [ ] **Image Alt Text:** Are all images (especially hero/feature images) using descriptive, keyword-rich alt text?
+- [ ] **Internal Linking:** Can Google crawl from the homepage to every single page within 3 clicks?
+- [ ] **Orphaned Pages:** Are there pages with no inbound links? They are effectively invisible to Google.
+
+### 1.4 Content Quality Checklist
+
+- [ ] **Thin Content:** Are service/product pages less than 400 words? Pages under 300 words rarely rank.
+- [ ] **Geo-Targeting:** Does the body content mention the target city, neighborhood, and region naturally?
+- [ ] **E-E-A-T Signals** (for medical, legal, financial topics): Does the content demonstrate Experience, Expertise, Authoritativeness, and Trustworthiness? (Author bio, credentials, clinic address, phone number visible and crawlable.)
+- [ ] **Heading Hierarchy:** Is there one H1, followed by H2s for sections, and H3s for sub-sections? Never skip heading levels.
+- [ ] **Character Rules:** Ensure zero emojis and zero em-dashes (`—`) in SEO content. These can interfere with how content is rendered and indexed. Use standard dashes (`-`) or restructure sentences.
+
+---
+
+## PHASE 2: Competitor and Keyword Analysis
+
+**Tasks:**
+- Identify the main competitors ranking above us for our important services.
+- Compare their top pages against ours for: content depth, keyword targeting, heading structure, metadata, internal linking, trust signals, CTA quality, FAQs, and topical breadth.
+- Build keyword clusters based on actual services offered by the business.
+- Group keywords by search intent and ranking opportunity.
+
+**Deliverables:**
+- Competitor gap analysis
+- Keyword clusters by service
+- Search intent groups
+- Ranking opportunity list by priority
+- Notes on why competitors outperform us
+
+**Important Rules for Phase 2:**
+- **Do not implement rewrites in this phase.**
+- **Do not change design or code in this phase.**
+- **Stop after Phase 2 and present findings.**
+
+### 2.1 Competitor Gap Analysis
+
+Identify 3-5 top-ranking competitors for your primary keywords. For each competitor, analyze:
+
+| Metric | Competitor Standard | Your Site | Gap / Action |
+| :--- | :--- | :--- | :--- |
+| Content depth | 800-1500 words per service page | Short blurbs | Write long-form content |
+| URL structure | `/services/dental-implants-bandra` | `/services` (one page) | Create individual slug pages |
+| Heading structure | H1: Service, H2: Benefits, H3: FAQs | Aesthetic only | Rebuild with semantic hierarchy |
+| Internal linking | Blogs link to services and back | No cross-linking | Add contextual links everywhere |
+| Trust signals | Per-service testimonials/galleries | Only on homepage | Distribute to service pages |
+| Schema markup | FAQPage on every service page | None | Inject JSON-LD schemas |
+
+### 2.2 Keyword Clusters
+
+Group keywords by search intent, not just topic. Each cluster maps to a different page type:
+
+**Informational Intent (Blog Content)**
+- "How long do dental implants last?"
+- "Is teeth whitening safe for sensitive teeth?"
+- "What causes bleeding gums?"
+- Target via blog posts. Use to funnel readers to service pages.
+
+**Transactional/Commercial Intent (Service Landing Pages)**
+- "Best dental implants in [City]"
+- "Invisible aligners cost [City]"
+- "Book wisdom tooth surgery [Neighborhood]"
+- Target via dedicated service landing pages. Every page must end with a strong CTA.
+
+**Navigational Intent (Homepage, About, Contact)**
+- "Dr. [Name] dentist reviews"
+- "Dental clinic near [Landmark]"
+- Target via homepage, Google Business Profile, and contact/about pages.
+
+### 2.3 Keyword Selection Rules
+
+- **Primary keyword:** Must appear in the URL slug, H1, and meta title.
+- **Secondary keywords:** Use naturally within H2s, the opening paragraph, and image alt text.
+- **Local modifier:** Always append city and neighborhood to medical, legal, or local service keywords (e.g., "Bandra West, Mumbai" not just "Mumbai").
+- **Keyword density:** Aim for natural usage. There is no magic percentage. Read it aloud; if it sounds forced, it is over-optimized.
+
+---
+
+# PART 2: TECHNICAL & ON-PAGE IMPLEMENTATION
+
+---
+
+## PHASE 3: Technical SEO Implementation
+
+### 3.1 Sitemap (Next.js)
+
+Use a dynamic, server-generated sitemap that auto-includes all service pages and blog posts:
+
+```typescript
+// src/app/sitemap.ts
+import { MetadataRoute } from 'next';
+
+export const revalidate = 86400; // Rebuild once per day
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const SITE_URL = 'https://www.yourdomain.com';
+
+  const staticRoutes = ['', '/about', '/services', '/blogs', '/contact'].map(route => ({
+    url: `${SITE_URL}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 1.0 : 0.8,
+  }));
+
+  // Dynamic service pages from your data layer
+  const serviceRoutes = servicesData.map(s => ({
+    url: `${SITE_URL}/services/${s.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }));
+
+  // Dynamic blog posts from your API/database
+  let blogRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/blogs`);
+    const blogs = await res.json();
+    blogRoutes = blogs.map((b: any) => ({
+      url: `${SITE_URL}/blogs/${b.slug}`,
+      lastModified: new Date(b.updatedAt || b.createdAt),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }));
+  } catch (e) {
+    console.error('Sitemap blog fetch failed:', e);
+  }
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
+}
+```
+
+### 3.2 Robots.txt (Next.js)
+
+```typescript
+// src/app/robots.ts
+export default function robots() {
+  return {
+    rules: { userAgent: '*', allow: '/' },
+    sitemap: 'https://www.yourdomain.com/sitemap.xml',
+  };
+}
+```
+
+### 3.3 Metadata (Next.js App Router)
+
+**Global Layout metadata (fallback defaults):**
+```typescript
+// src/app/layout.tsx
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.yourdomain.com'),
+  title: {
+    default: 'Primary Keyword in City | Brand Name',
+    template: '%s | Brand Name',
+  },
+  description: 'Compelling 155-character description targeting primary location and service.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Brand Name',
+    locale: 'en_IN',
+  },
+};
+```
+
+**Per-page dynamic metadata:**
+```typescript
+// src/app/services/[slug]/page.tsx
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // CRITICAL (Next.js 15+): params is a Promise. MUST be awaited.
+  const { slug } = await params;
+  const service = servicesData.find(s => s.slug === slug);
+  if (!service) return { title: 'Not Found' };
+
+  return {
+    title: `${service.title} in [City], [Region]`,
+    description: service.shortDescription,
+    keywords: service.seoKeywords,
+    alternates: {
+      canonical: `https://www.yourdomain.com/services/${service.slug}`,
+    },
+  };
+}
+```
+
+**CRITICAL DEPLOYMENT NOTE - Next.js 15+ params are Promises:**
+In Next.js 15 and above (which Vercel runs), the `params` object passed to page components and `generateMetadata` is a **Promise**, not a plain object. If you access `params.slug` synchronously, it returns `undefined` and all lookups fail silently with no build error. Always `await params`:
+
+```typescript
+// WRONG - silent bug, returns undefined on Vercel
+export default function Page({ params }: { params: { slug: string } }) {
+  const item = data.find(i => i.slug === params.slug); // undefined!
+}
+
+// CORRECT
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const item = data.find(i => i.slug === slug); // works correctly
+}
+```
+
+### 3.4 Structured Data / Schema Markup
+
+Inject JSON-LD schemas as `<script>` tags in the page `<head>` or `<body>`. Never use Microdata.
+
+**LocalBusiness / Dentist / Organization (Global - in layout.tsx):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Practice Name",
+  "url": "https://www.yourdomain.com",
+  "telephone": "+91-XXXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Example Road",
+    "addressLocality": "Bandra West, Mumbai",
+    "postalCode": "400050",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "10:00",
+    "closes": "20:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "121"
+  }
+}
+```
+
+**Service Schema (per service page):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Dental Implants",
+  "provider": {
+    "@type": "Dentist",
+    "name": "Practice Name"
+  },
+  "areaServed": { "@type": "City", "name": "Mumbai" },
+  "description": "Short description of the service."
+}
+```
+
+**FAQPage Schema (per service page with FAQs):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long do dental implants last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With proper care, dental implants can last a lifetime."
+      }
+    }
+  ]
+}
+```
+
+**Article Schema (per blog post):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Blog Post Title",
+  "author": { "@type": "Person", "name": "Author Name" },
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-06-20",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Brand Name",
+    "logo": { "@type": "ImageObject", "url": "https://yourdomain.com/logo.png" }
+  }
+}
+```
+
+### 3.5 Vercel Deployment Cache Traps
+
+When deploying on Vercel with Next.js SSG (Static Site Generation), be aware of these critical pitfalls:
+
+**Stale PRERENDER Cache:** Vercel aggressively caches pre-rendered static pages. If you update data but do not change the page's rendering mode, Vercel may serve the old cached HTML indefinitely. Signs: `x-vercel-cache: PRERENDER` or `x-vercel-cache: STALE` in response headers.
+
+**Solutions (in order of preference):**
+1. Use `export const dynamic = 'force-dynamic'` on the page to prevent static pre-rendering entirely. This is the nuclear option but always works.
+2. Use `export const revalidate = 60` (ISR) to tell Vercel to regenerate after 60 seconds. Requires an actual request to trigger regeneration.
+3. Trigger a manual redeploy from the Vercel dashboard.
+
+**Diagnosis command:**
+```javascript
+fetch('https://www.yourdomain.com/page').then(r => {
+  console.log('Cache:', r.headers.get('x-vercel-cache'));
+  console.log('Age:', r.headers.get('age'));
+});
+// MISS = fresh server render (good)
+// HIT or PRERENDER = cached (potentially stale)
+// STALE = serving old cache while regenerating in background
+```
+
+### 3.6 301 Redirects & URL Migrations
+
+If you are redesigning a site or changing URL slugs (e.g., from `/services` to `/treatments`), you **must** implement 301 redirects to avoid losing existing search rankings and creating 404 dead ends.
+
+In Next.js, configure this in `next.config.ts`:
+```typescript
+// next.config.ts
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/old-service-page',
+        destination: '/services/new-seo-friendly-slug',
+        permanent: true, // HTTP 301
+      },
+    ];
+  },
+};
+export default nextConfig;
+```
+
+### 3.7 URL Slug Best Practices
+
+- **Use hyphens, never underscores:** `dental-implants` (correct), `dental_implants` (incorrect - Google treats underscores as word joiners).
+- **Keep it lowercase:** URLs are case-sensitive on Linux servers. Mixing cases causes duplicate content issues.
+- **Remove stop words:** Keep slugs short. `/services/implants-mumbai` is better than `/services/get-the-best-dental-implants-in-mumbai-today`.
+- **Match intent:** The slug should immediately tell the user and the bot what the page is about.
+
+---
+
+## PHASE 4: On-Page SEO Implementation
+
+### 4.1 Service / Landing Page Template
+
+Every service/product page must follow this exact content structure:
+
+```
+H1: [Service Name] in [City/Neighborhood]
+     → Must contain primary keyword. Only one H1 per page.
+
+[Opening paragraph - 2-3 sentences]
+     → State what the service is, who it is for, and why the reader should care.
+       Naturally include the primary keyword within the first 100 words.
+
+H2: What is [Service]? / How Does [Service] Work?
+     → 2-4 paragraphs. Explain the procedure clinically and clearly.
+       Use secondary keywords here naturally.
+
+H2: Key Benefits of [Service]
+     → Use a bulleted or icon list. 4-6 bullets. Each benefit is one clear sentence.
+
+H2: The [Service] Procedure (Step by Step)
+     → Numbered list with title + description for each step.
+       This section demonstrates clinical expertise (E-E-A-T).
+
+H2: Frequently Asked Questions
+     → 3-5 Q&A pairs. Target "People Also Ask" queries from Google Search.
+       Mark up with FAQPage JSON-LD schema.
+
+[CTA Section]
+     → "Book a consultation" or "Get a free quote". Must be visible without scrolling.
+```
+
+### 4.2 Blog Post Template (Informational Content)
+
+```
+[Title tag] - Question format: "How Long Do Dental Implants Last? A Complete Guide"
+     → 50-60 characters. Targets exact user search query.
+
+[Meta description] - Answer the question directly in 155 characters.
+
+H1: [Same as or close to title tag]
+
+[Opening - 1 paragraph]
+     → Directly answer the question in the first 2 sentences (for Featured Snippets).
+
+H2: [Sub-topic 1]
+H2: [Sub-topic 2]
+H2: [Sub-topic 3]
+
+H2: Related Treatments at [Clinic Name]
+     → INTERNAL LINK to the relevant service page. This is mandatory.
+       Never publish a blog post without at least one internal link to a service page.
+
+H2: Frequently Asked Questions
+     → 2-3 additional related questions. Use FAQPage schema.
+
+[CTA] → "Ready to book a consultation? [Book Now]"
+```
+
+### 4.3 Internal Linking Rules
+
+Internal linking is the backbone of crawlability and topical authority:
+
+- Every blog post must link to at least one service page.
+- Every service page must link to at least 2-3 related blog posts or other service pages.
+- The homepage must link to all primary service pages, directly or via a navigation menu.
+- The footer must contain a "Services" or "Treatments" column with links to 4-6 top pages.
+- Use descriptive anchor text (e.g., "our dental implant procedure" not "click here").
+- Never leave orphan pages (pages with zero inbound links from the site).
+
+### 4.4 Image SEO
+
+- Every `<img>` tag must have a descriptive `alt` attribute.
+- Good: `alt="Dental implant surgery being performed at our Bandra clinic"`
+- Bad: `alt="image1"` or `alt="dental"` or empty `alt=""`
+- Use descriptive file names: `dental-implant-bandra-clinic.webp` not `IMG_4532.jpg`.
+- Use `<picture>` or Next.js `<Image>` component for automatic WebP/AVIF conversion.
+- Specify `width` and `height` on all images to prevent CLS (Cumulative Layout Shift).
+
+### 4.5 Core Web Vitals & Performance Optimization
+
+Google uses Core Web Vitals as a ranking factor. Focus on these three metrics:
+1. **Largest Contentful Paint (LCP):** The main content (usually the hero image or H1) must load within 2.5 seconds. Use `priority={true}` on Next.js `<Image>` tags for hero images to preload them.
+2. **Cumulative Layout Shift (CLS):** Visual stability. Prevent elements from jumping around as they load by defining explicit heights and widths for images and ad blocks.
+3. **Interaction to Next Paint (INP):** Responsiveness. Defer heavy third-party scripts (like analytics or chat widgets) using Next.js `next/script` with `strategy="lazyOnload"`.
+
+### 4.6 Mobile-First Indexing & Accessibility (a11y)
+
+Google exclusively crawls and indexes the **mobile version** of a website.
+- **Hidden Content on Mobile:** If content is visible on desktop but hidden via CSS (`display: none`) on mobile to save space, Google **will not index it**.
+- **Touch Targets:** Buttons and links must be at least 44x44 pixels to avoid "clickable elements too close together" errors in GSC.
+- **Accessibility:** Search bots use accessibility trees. Semantic HTML (`<nav>`, `<main>`, `<article>`, `<aside>`) and ARIA labels on buttons without text help bots understand page structure better.
+
+---
+
+## PHASE 5: Content Strategy and SEO Writing Rules
+
+### 5.1 Content Quality Standards
+
+**Minimum word counts by page type:**
+- Service / landing page: 600 words minimum, 1000+ words ideal
+- Blog post: 800 words minimum, 1500+ words ideal
+- Homepage: 400 words minimum
+- About page: 300 words minimum
+
+**E-E-A-T for sensitive niches (medical, legal, financial):**
+- Author name and credentials must be visible on every page.
+- Physical address and phone number must be in the footer, not just the contact page.
+- Mention technology, certifications, and years of experience in service pages.
+- Use precise, accurate clinical/professional language. Vague claims ("We are the best!") hurt credibility.
+
+### 5.2 Content Writing Rules (Enforced)
+
+- **No em-dashes (`—`):** Replace with a comma, period, or colon. Em-dashes can interfere with how text is parsed.
+- **No emojis in body content or meta tags:** Emojis in titles can appear unprofessionally in SERPs and may be stripped by search engines.
+- **No duplicate content:** Never copy-paste from competitor sites. Write original text. Paraphrase and add unique clinical detail.
+- **Active voice preferred:** "We remove the tartar with ultrasonic tools." Not "Tartar is removed using ultrasonic tools by our team."
+- **Short paragraphs:** Maximum 3-4 sentences per paragraph for readability.
+
+### 5.3 Geo-Targeting Best Practices
+
+For local businesses, weave location into content naturally:
+
+- Mention the city AND neighborhood in the H1 (e.g., "Teeth Whitening in Bandra West, Mumbai").
+- Reference local landmarks once (e.g., "Located near Bandra Talao").
+- Do NOT repeat "Mumbai" or "Bandra" more than once every 200 words (keyword stuffing).
+- Make sure the full address is in a `<address>` HTML tag on the contact page.
+
+---
+
+# PART 3: OFF-PAGE, VERIFICATION & LONG-TERM OPERATIONS
+
+---
+
+## PHASE 6: Off-Page SEO Signals
+
+These cannot be coded directly, but must be actioned:
+
+### 6.1 Google Business Profile (GBP)
+
+The single highest ROI action for any local business:
+
+1. Claim and verify the business at `google.com/business`.
+2. Fill every field: name, category (be specific: "Dentist", not "Health"), address, phone, website, hours, photos.
+3. Upload at least 15-20 high-quality photos (interior, exterior, staff, equipment).
+4. Actively collect Google Reviews. Send every patient a direct review link.
+5. Respond to every review (positive and negative) within 48 hours.
+6. Post weekly updates (offers, articles, clinic news) using the GBP Posts feature.
+
+### 6.2 Citation Building (NAP Consistency)
+
+NAP = Name, Address, Phone Number. These must be IDENTICAL across all platforms:
+
+- Your website footer
+- Google Business Profile
+- JustDial, Practo, Sulekha (for India)
+- Yelp, Healthgrades, ZocDoc (for international)
+- Facebook Business Page
+- LinkedIn Company Page
+
+Even a minor inconsistency (e.g., "Mumbai" vs "Mumbai, MH") can weaken local ranking signals.
+
+### 6.3 Backlink Strategy
+
+- **Guest articles:** Write one expert article per month for a local news site or relevant industry publication.
+- **Directory listings:** Get listed on 10-15 authoritative directories in your industry.
+- **Social profiles:** Ensure LinkedIn, Instagram, Facebook profiles all link back to the website.
+- **Press / PR:** Any local press coverage is a high-authority backlink. Submit to local business journals.
+
+---
+
+## PHASE 7: Deployment Verification Checklist
+
+After every major content or code push, verify the following before marking work as complete:
+
+### 7.1 Live Site Verification
+
+```javascript
+// Run this Node.js check for any URL after deployment
+async function verifySEO(url) {
+  const r = await fetch(url);
+  const t = await r.text();
+
+  const checks = {
+    statusCode: r.status,
+    cacheHeader: r.headers.get('x-vercel-cache'),
+    title: t.match(/<title[^>]*>([^<]+)/)?.[1],
+    hasH1: /<h1/i.test(t),
+    hasCanonical: t.includes('rel="canonical"'),
+    hasSchemaOrg: t.includes('application/ld+json'),
+    hasOgTags: t.includes('og:title'),
+    // Check for your primary content keyword
+    hasContent: t.includes('YOUR_UNIQUE_CONTENT_PHRASE'),
+  };
+
+  console.table(checks);
+}
+verifySEO('https://www.yourdomain.com/services/your-slug');
+```
+
+**What each result means:**
+- `statusCode`: Must be `200`. A `404` means the page does not exist. A `301` means you have a redirect (check it resolves correctly).
+- `cacheHeader: MISS`: Fresh server render. Content is current.
+- `cacheHeader: PRERENDER` or `STALE`: Serving old cached content. See Phase 3.5 for fix.
+- `title`: Must match what you wrote. If it says "Not Found", the page data lookup failed.
+
+### 7.2 Google Search Console Submission
+
+1. Go to `search.google.com/search-console`.
+2. Add property for your domain (DNS verification recommended).
+3. Navigate to **Sitemaps** and submit: `https://www.yourdomain.com/sitemap.xml`.
+4. Go to **URL Inspection** for your key pages and request indexing.
+5. Monitor **Coverage** report. Fix any pages marked as "Excluded" or "Error".
+
+### 7.3 Post-Deployment Monitoring (First 30 Days)
+
+| Tool | What to Monitor | Frequency |
+| :--- | :--- | :--- |
+| Google Search Console | Impressions, clicks, average position, crawl errors | Weekly |
+| Google Analytics (GA4) | Organic traffic, bounce rate, conversion events | Weekly |
+| Google PageSpeed Insights | Core Web Vitals (LCP < 2.5s, CLS < 0.1, INP < 200ms) | After each major deploy |
+| Manual spot check | Fetch 3-5 key URLs with the verification script above | After every deployment |
+
+---
+
+## PHASE 8: Common Pitfalls and Hard-Learned Rules
+
+These are mistakes discovered through real production deployments. Avoid them:
+
+1. **Never commit test files (`test.html`, `test2.html`) to the repo.** They get deployed to production and pollute the sitemap.
+
+2. **Rate limiting on blog POST endpoints:** If seeding a database with 10+ blog posts via API, use PUT (update) requests instead of POST (create) if rate limiting is active. Alternatively, batch seed directly via the database driver (Mongoose, etc.) bypassing the API entirely.
+
+3. **Vercel stale cache is invisible:** A deployment can show "Ready" on Vercel but the live site still serves the old HTML. Always verify the live URL with a fetch after deployment. The `x-vercel-cache: STALE` header is the telltale sign.
+
+4. **Next.js 15+ params must be awaited:** The `params` object in App Router pages is now a Promise. Accessing `params.slug` directly returns `undefined` with no error, causing every data lookup to fail. Always use `const { slug } = await params`.
+
+5. **SSG pages are frozen snapshots:** If a Next.js page uses `generateStaticParams`, Vercel pre-renders it at build time. Updates to the source data do not update the live page until either ISR triggers or you redeploy. For content that changes frequently, use `dynamic = 'force-dynamic'` or ISR with a short revalidation window.
+
+6. **Marquee/animated text is invisible to Google:** Text inside animated carousels, marquees, or JS-driven scroll effects is often not indexed because Google may not execute the JavaScript that renders it. Always duplicate key information in static, visible HTML.
+
+7. **The `eslint` config key is deprecated in Next.js 16:** Using `eslint: { ignoreDuringBuilds: true }` in `next.config.ts` will throw a warning and be ignored. Use `--no-lint` flag in the build command or configure ESLint separately.
+
+8. **Do not rely on JavaScript-rendered content for SEO:** Search engines index HTML. If your content only appears after a client-side `useEffect` or data fetch, it may not be indexed. Use Server Components or SSG/SSR for all primary SEO content.
+
+---
+
+## Quick Reference: SEO Priority Order
+
+When time is limited, work in this exact order for maximum impact:
+
+1. **Create dedicated URL pages for every service or product** (the "single page trap" fix).
+2. **Fix title tags and meta descriptions** for all existing pages.
+3. **Add structured data / schema markup** (LocalBusiness, Service, FAQPage).
+4. **Write long-form content** for each service page (600+ words per page).
+5. **Submit sitemap to Google Search Console** and request indexing.
+6. **Optimize Google Business Profile** (for local businesses).
+7. **Add internal linking** across all pages.
+8. **Generate blog content** targeting informational keywords.
+9. **Build citations** and off-page signals.
+10. **Monitor and iterate** using Search Console data.
+
+---
+
+## PHASE 9: Future Manual SEO Tasks & Timeline (Post-Deployment Execution)
+
+Once the foundational code and content work is complete, follow this exact chronological timeline for ongoing manual execution. Do not jump straight to off-page SEO until the technical elements are completely sorted.
+
+### Step 1: Technical & On-Page SEO Finalization (The Prerequisite)
+Before any external submissions or outreach, ensure the house is in order:
+- All pages have optimized title tags, meta descriptions, and proper H1/H2 hierarchy.
+- URL structures are clean, and 301 redirects are in place for any changed slugs.
+- Structured Data (Schema) is injected and validating.
+- The `sitemap.xml`, `robots.txt`, and `llms.txt` are live and error-free.
+- Internal linking architecture is robust with zero orphan pages.
+
+### Step 2: Search Engine & Analytics Submissions
+Once the site is technically flawless, officially invite the crawlers and tracking systems:
+- **Google Tag Manager (GTM):** Install the GTM container globally to manage all tracking scripts.
+- **Google Analytics 4 (GA4):** Configure GA4 via GTM. Set up key conversion events (e.g., form submissions, clicks-to-call, WhatsApp clicks).
+- **Google Search Console (GSC):** Verify domain ownership and submit the XML sitemap.
+- **Bing Webmaster Tools:** Import verification from GSC and submit the sitemap to capture Bing/Yahoo traffic.
+- **Local Directories:** Claim and fully optimize the Google Business Profile (GBP) and Bing Places.
+
+### Step 3: Competitor Analysis & Deep Audits
+With baseline traffic tracking active, start analyzing the broader market:
+- **Keyword Gap Analysis:** Identify valuable keywords competitors rank for that you currently miss.
+- **Backlink Gap Analysis:** Find authoritative websites linking to top competitors but not to you.
+- **Content Audits:** Evaluate competitor content depth, formatting, and media usage to benchmark your own pages.
+
+### Step 4: Iterative Changes & Content Expansion
+Use the data gathered in Step 3 to strategically improve the site:
+- Write new long-form service pages or blog posts to fill identified content gaps.
+- Expand existing "thin" pages with FAQs and deeper clinical/technical details.
+- Optimize underperforming pages based on early Search Console impression data (e.g., tweaking title tags to improve CTR).
+
+### Step 5: The Final Pre-Outreach Audit
+Before investing time and resources into off-page link building, perform one last health check:
+- Ensure no new 404 errors or broken links were created during recent content expansions.
+- Verify that Core Web Vitals (speed/layout shifts) remain healthy.
+- Confirm all AI crawler rules (e.g., GPTBot, Claude-Web) are functioning as intended in `robots.ts`.
+
+### Step 6: Off-Page SEO, Backlinks & Guest Posting
+Now that the site is a high-quality, technically sound asset, aggressively build its domain authority:
+- **Guest Posting:** Pitch high-quality, expert articles to industry publications with contextual backlinks to your site.
+- **Digital PR & Outreach:** Reach out to local news outlets, niche blogs, or industry roundups for brand mentions.
+- **Partner/Vendor Links:** Ask suppliers, distributors, or B2B partners to list your business on their "Partner Locator" pages.
+- **Community Engagement:** Answer niche-specific questions on Quora, Reddit, and LinkedIn groups with natural, value-driven links back to your long-form content.
+- **Citation Building:** Continue building local NAP (Name, Address, Phone) citations on authoritative business directories to strengthen local rankings.
+
+---
+
+# PART 4: ADVANCED SEO & FUTURE-PROOFING
+
+## PHASE 10: AI Search & Answer Engine Optimization (AEO)
+With AI-driven search engines (ChatGPT, Perplexity, Google SGE) becoming dominant, traditional SEO must evolve:
+- **`llms.txt` integration:** Maintain a clean, Markdown-formatted `llms.txt` in the root directory to feed structured data directly to LLM crawlers.
+- **Direct Answer Formats:** Structure content to directly answer "Who, What, Where, When, Why" in the first 50 words of a page to capture AI snippets.
+- **Entity Optimization:** Focus on "Entities" rather than just keywords. Search engines evaluate the relationships between the business and the services. Schema markup is critical for entity association.
+
+## PHASE 11: Conversion Rate Optimization (CRO) Synergy
+SEO brings traffic, but CRO turns traffic into revenue. These must be executed together:
+- **Heatmaps & Session Recording:** Implement Microsoft Clarity or Hotjar to see how users interact with the newly structured long-form SEO content.
+- **Scroll Depth Tracking:** If users aren't scrolling down to the FAQs, move the FAQs higher or add a jump-link navigation menu to improve engagement.
+- **A/B Testing CTA Placement:** Test placing "Book Now" buttons in the hero section vs. after the pricing/benefits section based on analytics data.
+
+## PHASE 12: Programmatic & Multi-Location SEO (Scaling)
+If the business expands to multiple cities or offers massive product variations, scaling manually is impossible:
+- **Dynamic Landing Pages:** Build headless/database-driven templates that dynamically inject city/neighborhood names into the H1, Title, and Meta description (e.g., `/data-center-setup-[city]`).
+- **Local Pillar Pages:** Create an overarching "Areas We Serve" page that links out to individual, highly localized service pages to build local topical authority.
+- **Bulk Content Operations:** Utilize structured data sets to generate thousands of highly relevant, hyper-local pages without triggering duplicate content penalties.

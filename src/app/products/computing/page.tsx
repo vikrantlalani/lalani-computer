@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Laptop, Monitor, Cpu, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/products/computing' },
@@ -50,8 +51,58 @@ const advantages = [
 ];
 
 export default function ComputingPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do we standardize laptop specifications for our employees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We help procurement teams define strict hardware tiers (e.g., i5 for admin, i7/32GB for developers) and supply uniform models across your company to dramatically simplify IT support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the warranty policy for bulk corporate laptop purchases?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every laptop we supply comes with a comprehensive OEM commercial warranty. We also provide direct technical support to ensure minimal downtime for your employees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost of buying corporate laptops in bulk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Volume pricing depends entirely on processor specifications, RAM, and total quantity. As authorized OEM partners, we offer deep discounts over retail pricing."
+        }
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "How do we standardize laptop specifications for our employees?",
+      answer: "We help procurement teams define strict hardware tiers (e.g., i5 for admin, i7/32GB for developers) and supply uniform models across your company to dramatically simplify IT support."
+    },
+    {
+      question: "What is the warranty policy for bulk corporate laptop purchases?",
+      answer: "Every laptop we supply comes with a comprehensive OEM commercial warranty. We also provide direct technical support to ensure minimal downtime for your employees."
+    },
+    {
+      question: "What is the cost of buying corporate laptops in bulk?",
+      answer: <>Volume pricing depends entirely on processor specifications, RAM, and total quantity. As authorized OEM partners, we offer deep discounts over retail pricing. <Link href="/contact" className="text-primary hover:underline font-medium">Request a custom bulk quotation.</Link></>
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-warm-bg1 border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center gap-2 text-sm text-text-dark/60 font-medium">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -142,6 +193,19 @@ export default function ComputingPage() {
             ))}
           </div>
         </div>
+      </Section>
+
+      <Section variant="white" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <FadeIn>
+            <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
+            <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
+            <Typography variant="lead">Common questions about corporate laptop and desktop procurement.</Typography>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.2} direction="up">
+          <FAQAccordion items={faqItems} />
+        </FadeIn>
       </Section>
 
       <Section variant="light" className="border-t border-primary/10">

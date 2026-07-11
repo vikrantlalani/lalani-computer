@@ -83,7 +83,7 @@ export default function AboutPage() {
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-beige font-bold shadow-lg md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shrink-0">10s</div>
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-primary/5 transition-transform group-hover:-translate-y-1">
                 <Typography variant="h3" className="mb-2 text-primary">Turnkey Solutions</Typography>
-                <Typography variant="body">Expanded beyond box-pushing to offer end-to-end office networking, CCTV, and AMC services.</Typography>
+                <Typography variant="body">Expanded beyond box-pushing to offer <Link href="/solutions/office-setup" className="text-primary hover:underline font-medium">Turnkey Office IT Setup</Link>, CCTV, and AMC services.</Typography>
               </div>
             </div>
             {/* Timeline Item 4 */}
