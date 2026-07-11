@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
+import Link from "next/link";
 
 export function FinalCTASection() {
   return (
@@ -22,7 +23,7 @@ export function FinalCTASection() {
         
         <FadeIn delay={0.1} direction="up">
           <Typography variant="lead" className="text-beige/80 mb-10 max-w-2xl mx-auto">
-            From a single laptop replacement to a complete corporate office IT setup, we deliver fast and reliable solutions.
+            From a single laptop replacement to a complete <Link href="/solutions/office-setup" className="text-white hover:text-primary transition-colors hover:underline">corporate office IT setup</Link>, we deliver fast and reliable solutions.
           </Typography>
         </FadeIn>
 

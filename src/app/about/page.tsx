@@ -39,7 +39,7 @@ export default function AboutPage() {
             <Typography variant="eyebrow">Our Story</Typography>
             <Typography variant="h1" className="mb-6">30+ Years of IT Hardware Experience</Typography>
             <Typography variant="lead">
-              Lalani Computers started with a simple premise: provide corporate India with dependable IT hardware faster than anyone else. Three decades later, we are a cornerstone of Mumbai's enterprise infrastructure.
+              Lalani Computers started with a simple premise: provide corporate India with dependable IT hardware faster than anyone else. Three decades later, we are a cornerstone of Mumbai's enterprise infrastructure, specializing in end-to-end <Link href="/solutions/office-setup" className="text-primary hover:underline font-medium">turnkey office IT setups</Link>.
             </Typography>
           </FadeIn>
         </div>
