@@ -15,58 +15,75 @@ declare global {
 
 export function GTMScript() {
   const { consent } = useCookieConsent();
-  const [pushed, setPushed] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Push consent update to dataLayer whenever it changes
   useEffect(() => {
-    if (!consent.given || !GTM_ID) return;
+    if (!mounted || !GTM_ID) return;
+    
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "consent_update",
-      analytics_storage: consent.analytics ? "granted" : "denied",
-      ad_storage: consent.marketing ? "granted" : "denied",
-      ad_user_data: consent.marketing ? "granted" : "denied",
-      ad_personalization: consent.marketing ? "granted" : "denied",
-    });
-    setPushed(true);
-  }, [consent]);
+    function gtag(){ window.dataLayer.push(arguments); }
+
+    if (consent.given) {
+      gtag("consent", "update", {
+        analytics_storage: consent.analytics ? "granted" : "denied",
+        ad_storage: consent.marketing ? "granted" : "denied",
+        ad_user_data: consent.marketing ? "granted" : "denied",
+        ad_personalization: consent.marketing ? "granted" : "denied",
+      });
+    }
+  }, [consent, mounted]);
 
   if (!GTM_ID) return null;
 
   return (
     <>
-      {/* GTM Script — loads once consent is given */}
-      {consent.given && (
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-            `,
-          }}
-        />
-      )}
-      {consent.given && (
-        <Script
-          id="gtm-loader"
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
-        />
-      )}
+      {/* Default Consent State (Runs before GTM loads) */}
+      <Script
+        id="gtm-consent-default"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            
+            // Set default consent to denied (Consent Mode V2 standard)
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'wait_for_update': 500
+            });
+            
+            // Initialize GTM
+            dataLayer.push({
+              'gtm.start': new Date().getTime(), 
+              event: 'gtm.js'
+            });
+          `,
+        }}
+      />
 
-      {/* GTM noscript iframe — only renders if consent given */}
-      {consent.given && (
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-      )}
+      {/* GTM Script — ALWAYS LOADED to capture cookieless pings */}
+      <Script
+        id="gtm-loader"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+      />
+
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        />
+      </noscript>
     </>
   );
 }

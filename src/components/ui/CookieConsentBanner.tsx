@@ -87,15 +87,6 @@ export function CookieConsentBanner() {
             You can choose which categories to allow below.
           </p>
 
-          {/* Customise toggle */}
-          <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="flex items-center gap-1.5 text-xs font-semibold text-primary/70 hover:text-primary transition-colors mb-4"
-          >
-            {showDetails ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-            {showDetails ? "Hide" : "Customise"} preferences
-          </button>
-
           {/* Expandable details */}
           {showDetails && (
             <div className="space-y-3 mb-5 border border-primary/10 rounded-xl p-4 bg-primary/[0.02]">
@@ -151,25 +142,25 @@ export function CookieConsentBanner() {
             {showDetails ? (
               <>
                 <button
-                  onClick={acceptEssential}
+                  onClick={handleSaveCustom}
                   className="flex-1 py-2.5 text-xs font-semibold border border-primary/20 text-primary/80 rounded-xl hover:bg-primary/5 transition-colors"
                 >
-                  Essential only
+                  Save preferences
                 </button>
                 <button
-                  onClick={handleSaveCustom}
+                  onClick={acceptAll}
                   className="flex-1 py-2.5 text-xs font-bold bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
                 >
-                  Save preferences
+                  Accept all
                 </button>
               </>
             ) : (
               <>
                 <button
-                  onClick={acceptEssential}
+                  onClick={() => setShowDetails(true)}
                   className="flex-1 py-2.5 text-xs font-semibold border border-primary/20 text-primary/80 rounded-xl hover:bg-primary/5 transition-colors"
                 >
-                  Essential only
+                  Customise
                 </button>
                 <button
                   onClick={acceptAll}
