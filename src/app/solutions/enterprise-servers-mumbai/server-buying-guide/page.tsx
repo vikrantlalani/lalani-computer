@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "Enterprise Server Buying Guide 2026 | Lalani Computers",
   description: "A detailed guide on selecting the right tower, rack, and blade servers for your corporate data center.",
+  alternates: { canonical: '/solutions/enterprise-servers-mumbai/server-buying-guide' },
 };
 
 export default function GuidePage() {

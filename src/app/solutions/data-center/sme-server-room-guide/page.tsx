@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "How to Build an SME Server Room | Lalani Computers",
   description: "Expert advice on building secure, scalable server rooms with proper cooling and power management for SMEs.",
+  alternates: { canonical: '/solutions/data-center/sme-server-room-guide' },
 };
 
 export default function GuidePage() {

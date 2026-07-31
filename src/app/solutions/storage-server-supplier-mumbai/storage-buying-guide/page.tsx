@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "Storage & NAS Setup Guide 2026 | Lalani Computers",
   description: "A complete overview of NAS, SAN, and DAS storage arrays for enterprise data backup and disaster recovery.",
+  alternates: { canonical: '/solutions/storage-server-supplier-mumbai/storage-buying-guide' },
 };
 
 export default function GuidePage() {

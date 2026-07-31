@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "CCTV & Security Buying Guide | Lalani Computers",
   description: "How to design a robust IP camera and biometric access control topology for corporate buildings.",
+  alternates: { canonical: '/solutions/surveillance-security/cctv-buying-guide' },
 };
 
 export default function GuidePage() {

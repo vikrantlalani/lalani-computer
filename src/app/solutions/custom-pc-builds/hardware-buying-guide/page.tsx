@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "2026 IT Hardware Buying Guide | Lalani Computers",
   description: "The ultimate hardware buying guide for workstations, gaming rigs, and high-performance desktops in 2026.",
+  alternates: { canonical: '/solutions/custom-pc-builds/hardware-buying-guide' },
 };
 
 export default function GuidePage() {

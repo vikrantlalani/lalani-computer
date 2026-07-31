@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "Office Networking Guide 2026 | Lalani Computers",
   description: "Best practices for setting up secure, high-speed wired and wireless networks for modern Indian offices.",
+  alternates: { canonical: '/solutions/office-network-setup-india/networking-guide' },
 };
 
 export default function GuidePage() {

@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "2026 Startup IT Checklist | Lalani Computers",
   description: "A comprehensive IT checklist for new offices and startups in Mumbai, covering networking, laptops, and basic security.",
+  alternates: { canonical: '/solutions/office-setup/startup-checklist-2026' },
 };
 
 export default function GuidePage() {

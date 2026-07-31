@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "Enterprise Wi-Fi Setup Guide | Lalani Computers",
   description: "Step-by-step guide to deploying secure, seamless, and high-density wireless networks using enterprise access points.",
+  alternates: { canonical: '/solutions/networking-wifi/wifi-setup-guide' },
 };
 
 export default function GuidePage() {

@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 export const metadata: Metadata = {
   title: "Definitive AMC Checklist for 2026 | Lalani Computers",
   description: "What to look for in a corporate IT Annual Maintenance Contract (AMC) to ensure zero downtime.",
+  alternates: { canonical: '/solutions/amc-support/amc-checklist' },
 };
 
 export default function GuidePage() {
