@@ -66,6 +66,27 @@ export default function SolutionsPage() {
       deliverables: ["NVIDIA RTX GPUs", "High-End Processors (Intel/AMD)", "Custom Liquid Cooling", "Professional Assembly"],
       href: "/solutions/custom-pc-builds"
     },
+    {
+      title: "Storage Server Supplier & Colocation",
+      useCase: "Data intensive enterprises and growing startups.",
+      process: "Storage Needs Analysis → Hardware Supply → Space Assignment → Setup",
+      deliverables: ["New and Refurbished SAN/NAS", "All-Flash Arrays", "Certified Used Storage Servers", "Colocation Space"],
+      href: "/solutions/storage-server-supplier-mumbai"
+    },
+    {
+      title: "Enterprise Servers in Mumbai",
+      useCase: "Data Centers & Corporates.",
+      process: "Needs Assessment → Hardware Supply → Setup → Support",
+      deliverables: ["High-performance rack & blade servers", "Custom configuration & installation", "On-site deployment in Mumbai", "Maintenance"],
+      href: "/solutions/enterprise-servers-mumbai"
+    },
+    {
+      title: "Office Network Setup Company India",
+      useCase: "SMEs, Startups & Corporates.",
+      process: "Network Design → Cabling → Hardware Setup → Configuration → Optimization",
+      deliverables: ["Enterprise routing & switching", "Seamless Wi-Fi coverage", "Secure firewall configuration", "Load Balancers"],
+      href: "/solutions/office-network-setup-india"
+    },
   ];
 
   const stepper = [

@@ -93,6 +93,36 @@ export default function RootLayout({
                     "addressRegion": "Maharashtra",
                     "postalCode": "400001",
                     "addressCountry": "IN"
+                  },
+                  "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "IT Hardware and Turnkey Solutions",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Enterprise Servers and Storage Solutions",
+                          "url": "https://www.lalanicomputers.com/solutions/enterprise-servers-mumbai"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Office Network Setup",
+                          "url": "https://www.lalanicomputers.com/solutions/office-network-setup-india"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Used Storage Server Supplier and Colocation",
+                          "url": "https://www.lalanicomputers.com/solutions/storage-server-supplier-mumbai"
+                        }
+                      }
+                    ]
                   }
                 }
               ]

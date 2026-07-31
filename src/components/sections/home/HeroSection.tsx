@@ -98,11 +98,11 @@ export function HeroSection() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm md:text-base font-medium text-[#E8E6E0]/80"
         >
-          <a href="/solutions/office-setup" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Turnkey Office IT Setups in Mumbai</a>
+          <a href="/solutions/office-network-setup-india" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Office Network Setup Company India</a>
           <span className="hidden sm:inline opacity-30">•</span>
-          <a href="/products/computing" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Corporate Laptops for Enterprise</a>
+          <a href="/solutions/enterprise-servers-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Enterprise Servers in Mumbai</a>
           <span className="hidden sm:inline opacity-30">•</span>
-          <a href="/products/servers" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Enterprise Servers & Data Centers</a>
+          <a href="/solutions/storage-server-supplier-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Colocation & Storage Server Supplier</a>
         </motion.div>
 
       </div>

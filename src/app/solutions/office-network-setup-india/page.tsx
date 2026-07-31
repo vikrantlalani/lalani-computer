@@ -3,54 +3,52 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Monitor, Zap, Shield } from "lucide-react";
+import { CheckCircle2, Network, Wifi, Shield } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "Best PC Builder in Mumbai: Custom Gaming & Office Workstations",
-  description: "Looking for the best PC builder in Mumbai? Lalani Computers specializes in building custom high-performance desktops for gaming, editing, and corporate offices.",
-  alternates: {
-    canonical: "/solutions/custom-pc-builds",
-  },
+  title: "Office Network Setup Company India | Lalani Computers",
+  description: "Expert office network setup company in India. We design, install, and manage corporate LAN/WAN networking and seamless Wi-Fi infrastructure for modern workplaces.",
+  alternates: { canonical: '/solutions/office-network-setup-india' },
 };
 
 const deliverables = [
-  "High-End Gaming Rigs (RTX 40-series)",
-  "Corporate Workstations (ECC RAM)",
-  "Budget Office Desktops (BPO/KPO)",
-  "Custom Liquid Cooling Loops",
-  "24-hour stress testing before delivery"
+  "Structured CAT6/Fiber Cabling",
+  "High-Density Wi-Fi (WLAN) Setup",
+  "Managed Switching & Routing",
+  "Firewall & Network Security UTMs",
+  "Zero-Downtime Configuration"
 ];
 
-export default function CustomPCBuildsPage() {
+export default function OfficeNetworkSetupPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Why buy a custom PC from Lalani Computers instead of standard shops?",
+        "name": "What does your end-to-end office network setup include?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "With over 30 years of corporate IT experience, we guarantee 100% genuine components, transparent Bill of Materials (BOM) pricing, and enterprise-grade reliability."
+          "text": "Our turnkey service includes network topology design, structured CAT6/Fiber cabling, hardware procurement (switches, routers, firewalls, access points), physical installation, and final configuration for seamless LAN and Wi-Fi coverage."
         }
       },
       {
         "@type": "Question",
-        "name": "Should my office use pre-built desktops or custom-built PCs?",
+        "name": "Which brands of networking equipment do you use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "While branded desktops are great for standard use, power users (like 3D animators or financial analysts) require custom workstations."
+          "text": "We partner with leading networking giants to provide enterprise-grade reliability. This includes Cisco, Aruba, Fortinet, Ubiquiti (UniFi), TP-Link Omada, and Sophos for firewall security."
         }
       },
       {
         "@type": "Question",
-        "name": "Do custom assembled PCs come with a warranty?",
+        "name": "Can you manage multi-floor structured cabling for large corporate offices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. Every individual component carries its official OEM warranty. Furthermore, we run a strict 24-hour stress test on every rig before delivery."
+          "text": "Yes. We have executed complex structural cabling and high-density Wi-Fi deployments across multi-floor corporate campuses, manufacturing plants, and educational institutes."
         }
       }
     ]
@@ -58,16 +56,16 @@ export default function CustomPCBuildsPage() {
 
   const faqItems = [
     {
-      question: "Why buy a custom PC from Lalani Computers instead of standard shops?",
-      answer: "With over 30 years of corporate IT experience, we guarantee 100% genuine components, transparent Bill of Materials (BOM) pricing, and enterprise-grade reliability."
+      question: "What does your end-to-end office network setup include?",
+      answer: "Our turnkey service includes network topology design, structured CAT6/Fiber cabling, hardware procurement (switches, routers, firewalls, access points), physical installation, and final configuration for seamless LAN and Wi-Fi coverage."
     },
     {
-      question: "Should my office use pre-built desktops or custom-built PCs?",
-      answer: "While branded desktops are great for standard use, power users (like 3D animators or financial analysts) require custom workstations."
+      question: "Which brands of networking equipment do you use?",
+      answer: "We partner with leading networking giants to provide enterprise-grade reliability. This includes Cisco, Aruba, Fortinet, Ubiquiti (UniFi), TP-Link Omada, and Sophos for firewall security."
     },
     {
-      question: "Do custom assembled PCs come with a warranty?",
-      answer: "Absolutely. Every individual component carries its official OEM warranty. Furthermore, we run a strict 24-hour stress test on every rig before delivery."
+      question: "Can you manage multi-floor structured cabling for large corporate offices?",
+      answer: "Yes. We have executed complex structural cabling and high-density Wi-Fi deployments across multi-floor corporate campuses, manufacturing plants, and educational institutes."
     }
   ];
 
@@ -83,20 +81,20 @@ export default function CustomPCBuildsPage() {
           <span>/</span>
           <Link href="/solutions" className="hover:text-primary transition-colors">Solutions</Link>
           <span>/</span>
-          <span className="text-primary truncate max-w-[200px] md:max-w-none">Custom PC Builds</span>
+          <span className="text-primary truncate max-w-[200px] md:max-w-none">Office Network Setup</span>
         </div>
       </div>
 
       <Section variant="light" className="pt-16 pb-12">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
-            <Typography variant="eyebrow">IT Services</Typography>
-            <Typography variant="h1" className="mb-6">Best PC Builder in Mumbai</Typography>
+            <Typography variant="eyebrow">Network Connectivity</Typography>
+            <Typography variant="h1" className="mb-6">Office Network Setup Company India</Typography>
             <Typography variant="lead">
-              Don't settle for pre-built compromises. We design, assemble, and stress-test custom workstations for gamers, 3D animators, and heavy-duty corporate environments.
+              We design, install, and manage corporate LAN/WAN networking and seamless, high-density Wi-Fi infrastructure for modern workplaces across India.
             </Typography>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact"><Button size="lg">Consult Our PC Builders</Button></Link>
+              <Link href="/contact"><Button size="lg">Get a Network Design Quote</Button></Link>
             </div>
           </FadeIn>
         </div>
@@ -106,9 +104,9 @@ export default function CustomPCBuildsPage() {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1">
             <FadeIn direction="left">
-              <Typography variant="h2" className="mb-6">Maximum Performance</Typography>
+              <Typography variant="h2" className="mb-6">Building the Backbone of Your Business</Typography>
               <Typography variant="body" className="mb-8 text-text-dark/80">
-                Whether you are a hardcore gamer or a financial analyst, a custom-built PC gives you maximum performance for every rupee spent. We use only 100% genuine components.
+                A fast, secure, and reliable network is non-negotiable. Whether you are moving into a new space or upgrading aging infrastructure, we provide end-to-end solutions.
               </Typography>
               <ul className="space-y-4">
                 {deliverables.map((item, i) => (
@@ -125,20 +123,20 @@ export default function CustomPCBuildsPage() {
             <FadeIn direction="right" className="relative z-10">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm text-primary">
-                  <Monitor className="w-8 h-8" />
+                  <Network className="w-8 h-8" />
                 </div>
                 <div>
-                  <Typography variant="h3">Gaming Rigs</Typography>
-                  <Typography variant="small" className="text-text-dark/70">RTX GPUs & High Refresh Rates.</Typography>
+                  <Typography variant="h3">Wired Infrastructure</Typography>
+                  <Link href="/products/networking-security" className="text-primary text-sm font-semibold hover:underline">Explore Switches →</Link>
                 </div>
               </div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm text-primary">
-                  <Zap className="w-8 h-8" />
+                  <Wifi className="w-8 h-8" />
                 </div>
                 <div>
-                  <Typography variant="h3">Workstations</Typography>
-                  <Typography variant="small" className="text-text-dark/70">Massive RAM for CAD & 3D.</Typography>
+                  <Typography variant="h3">Wireless Coverage</Typography>
+                  <Link href="/products/networking-security" className="text-primary text-sm font-semibold hover:underline">Explore Access Points →</Link>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -146,8 +144,8 @@ export default function CustomPCBuildsPage() {
                   <Shield className="w-8 h-8" />
                 </div>
                 <div>
-                  <Typography variant="h3">Reliable Builds</Typography>
-                  <Typography variant="small" className="text-text-dark/70">24-hour stress tested.</Typography>
+                  <Typography variant="h3">Secure by Design</Typography>
+                  <Link href="/products/software" className="text-primary text-sm font-semibold hover:underline">Explore Firewalls →</Link>
                 </div>
               </div>
             </FadeIn>
@@ -160,7 +158,7 @@ export default function CustomPCBuildsPage() {
           <FadeIn>
             <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
             <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
-            <Typography variant="lead">Common questions about custom PC building.</Typography>
+            <Typography variant="lead">Common questions about our office networking solutions.</Typography>
           </FadeIn>
         </div>
         <FadeIn delay={0.2} direction="up">
@@ -172,25 +170,24 @@ export default function CustomPCBuildsPage() {
         <div className="max-w-4xl mx-auto">
           <FadeIn delay={0.2}>
             <div className="p-8 md:p-12 bg-white border border-primary/10 shadow-lg rounded-2xl flex flex-col items-center text-center max-w-3xl mx-auto">
-              <Typography variant="h2" className="mb-4">Ready to Build Your Dream PC?</Typography>
+              <Typography variant="h2" className="mb-4">Need a Network Design & Quote?</Typography>
               <Typography variant="body" className="text-text-dark/80 mb-8 max-w-xl">
-                Send us your required specifications or budget, and our engineers will reply with a custom parts list and quote within hours.
+                Share your office floor plan or headcount with us, and our network architects will design a robust topology and provide a detailed BOM within hours.
               </Typography>
               <a 
-                href={`https://wa.me/919323332850?text=${encodeURIComponent(`Hi, I am looking for a custom PC build. Can you help me draft a parts list and quote?`)}`} 
+                href={`https://wa.me/919323332850?text=${encodeURIComponent(`Hi, I am looking for office network setup and Wi-Fi installation. Can we schedule a site survey or discuss a quote?`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
                 <Button size="lg" className="flex items-center gap-2 bg-[#25D366] text-white hover:bg-[#20b858] border-none shadow-xl shadow-[#25D366]/20 py-6 px-8 text-lg">
                   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                  Get a Custom BOM & Quote
+                  Get a Custom Network Design & Quote
                 </Button>
               </a>
             </div>
           </FadeIn>
         </div>
       </Section>
-
       <Section variant="light" className="border-t border-primary/10">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
@@ -201,7 +198,7 @@ export default function CustomPCBuildsPage() {
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: "2026 IT Hardware Buying Guide", url: "/solutions/custom-pc-builds/hardware-buying-guide" },
+              { title: "Office Networking Guide 2026", url: "/solutions/office-network-setup-india/networking-guide" },
             ].map((guide, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <Link href={guide.url} className="block group bg-white rounded-xl p-6 border border-primary/10 hover:shadow-md hover:border-primary/30 transition-all">

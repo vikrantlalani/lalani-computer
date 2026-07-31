@@ -26,7 +26,7 @@ export function GTMScript() {
     if (!mounted || !GTM_ID) return;
     
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
+    const gtag = function(...args: any[]){ window.dataLayer.push(arguments); };
 
     if (consent.given) {
       gtag("consent", "update", {

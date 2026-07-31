@@ -84,9 +84,14 @@ The design system is managed via Tailwind v4 `@theme` variables in `/src/app/glo
 - **Sparkles:** A particle-based canvas system (`@tsparticles/react`) used for ambient "stardust" effects in CTA sections.
 - **Progressive Blur:** Multi-layered backdrop-filter gradients used to create smooth, high-fidelity edge transitions in scrolling carousels.
 
+### Lightweight State Management (Singleton Observers)
+- **Logic:** The project avoids React Context for global UI states like the preloader or scroll position to prevent unnecessary widespread re-renders.
+- **Implementation:** Custom singleton observers (`src/lib/loaderState.ts` and `src/lib/scrollState.ts`) manage state. Components subscribe to these stores in `useEffect` hooks, keeping DOM updates highly localized and performant.
+
 ## 7. Development Rules & Guidelines
 - **Strict Client/Server Boundaries:** Components using GSAP, framer-motion, or browser-event handlers (like `onError`) must be marked with `"use client"`.
 - **Animation Cleanup:** GSAP `ScrollTrigger` instances and `gsap.context()` must be properly reverted/killed in `useEffect` cleanup to prevent memory leaks.
 - **Logo Integrity:** Brand logos should be displayed with their original colors where possible. Avoid `invert` or `brightness-0` filters on logos in the footer or navbar to maintain brand authority.
 - **Accessibility:** Maintain WCAG 2.1 AA. Ensure `aria-expanded` on the `MorphedMenu`, and `focus-visible` for keyboard users.
 - **Responsiveness:** Layouts must collapse cleanly on mobile (down to 375px). Use horizontal carousels for brand grids on mobile to save vertical space.
+- **Strict SEO Adherence:** The project has an extensive end-to-end SEO plan documented in `FINALSEO.txt`. You must strictly follow these rules: do not change frontend layout, animations, or styling in the name of SEO. All SEO improvements must occur underneath the hood (e.g., semantic HTML, schema markup, metadata) without altering the premium brand presentation.

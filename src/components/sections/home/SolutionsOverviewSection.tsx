@@ -20,7 +20,7 @@ const solutions = [
       "Network & infrastructure planning",
       "Ready-to-use workstations",
     ],
-    yOffset: "0px",   // Card 01: baseline
+    yOffset: "0px",
     href: "/solutions/office-setup"
   },
   {
@@ -32,7 +32,7 @@ const solutions = [
       "Fast on-site troubleshooting",
       "Dedicated account managers",
     ],
-    yOffset: "40px",  // Card 02: slightly lower
+    yOffset: "40px",
     href: "/solutions/amc-support"
   },
   {
@@ -44,7 +44,7 @@ const solutions = [
       "Biometric & access control",
       "Remote monitoring setups",
     ],
-    yOffset: "20px",  // Card 03: mid offset
+    yOffset: "20px",
     href: "/solutions/surveillance-security"
   },
   {
@@ -56,9 +56,45 @@ const solutions = [
       "Seamless Wi-Fi coverage",
       "Secure firewall configuration",
     ],
-    yOffset: "60px",  // Card 04: lowest (broken grid)
+    yOffset: "60px",
     href: "/solutions/networking-wifi"
   },
+  {
+    num: "05",
+    title: "Office Network Setup India",
+    audience: "SMEs, Startups & Corporates",
+    features: [
+      "Enterprise routing & switching",
+      "Seamless Wi-Fi coverage",
+      "Secure firewall configuration",
+    ],
+    yOffset: "0px",
+    href: "/solutions/office-network-setup-india"
+  },
+  {
+    num: "06",
+    title: "Enterprise Servers Mumbai",
+    audience: "Data Centers & Corporates",
+    features: [
+      "High-performance rack & blade servers",
+      "Custom configuration & installation",
+      "On-site deployment in Mumbai",
+    ],
+    yOffset: "40px",
+    href: "/solutions/enterprise-servers-mumbai"
+  },
+  {
+    num: "07",
+    title: "Storage & Colocation",
+    audience: "Growing Enterprises",
+    features: [
+      "New & refurbished SAN/NAS systems",
+      "High-capacity object storage",
+      "Secure colocation spaces",
+    ],
+    yOffset: "20px",
+    href: "/solutions/storage-server-supplier-mumbai"
+  }
 ];
 
 export function SolutionsOverviewSection() {
