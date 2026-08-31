@@ -133,7 +133,7 @@ export default function ComputingPage() {
             </Typography>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact"><Button size="lg">Request Bulk Pricing</Button></Link>
-              <Link href="/contact"><Button variant="outline" size="lg" className="bg-white hover:bg-primary/5">Buy for Individual</Button></Link>
+              <Link href="/contact"><Button variant="secondary" size="lg" className="bg-white hover:bg-primary/5">Buy for Individual</Button></Link>
             </div>
           </FadeIn>
         </div>
