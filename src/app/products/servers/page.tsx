@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Server, Database, Activity, HardDrive } from "lucide-react";
+import { CheckCircle2, Server, Database, Activity, HardDrive, ShieldCheck, LineChart, Truck, Wrench, Settings, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -41,14 +41,6 @@ const serverTypes = [
   },
 ];
 
-const advantages = [
-  "Authorized partner pricing for Dell, HPE, and Lenovo",
-  "Free initial capacity planning and workload consultation",
-  "Rapid local delivery across Mumbai, Navi Mumbai & Thane",
-  "Certified engineers for on-site racking, stacking & OS deployment",
-  "Custom RAID configuration & active directory setup",
-  "Comprehensive Annual Maintenance Contracts (AMC) available",
-];
 
 export default function ServersPage() {
   const faqSchema = {
@@ -179,22 +171,80 @@ export default function ServersPage() {
 
       {/* Why Buy From Us */}
       <Section variant="dark">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Typography variant="h2" className="text-white text-center mb-8">Why Source Servers from Lalani Computers?</Typography>
             <Typography variant="lead" className="text-center text-beige/70 mb-12">
               Buying a server is more than just hardware procurement. It requires precise capacity planning and reliable after-sales support.
             </Typography>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {advantages.map((point, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors h-full">
-                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <Typography variant="body" className="text-beige/90">{point}</Typography>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <FadeIn delay={0.1}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
-              </FadeIn>
-            ))}
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Authorized Partner Pricing</Typography>
+                  <Typography variant="small" className="text-beige/75">Direct procurement discounts for Dell, HPE, and Lenovo enterprise servers.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <LineChart className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Capacity Planning</Typography>
+                  <Typography variant="small" className="text-beige/75">Free initial consultation to match server workloads and storage to your business needs.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Rapid Local Delivery</Typography>
+                  <Typography variant="small" className="text-beige/75">Fast delivery and fulfillment across Mumbai, Navi Mumbai, and Thane.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.25}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Wrench className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Certified Engineers</Typography>
+                  <Typography variant="small" className="text-beige/75">On-site racking, stacking, and OS deployment by trained technical experts.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Settings className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Custom Configuration</Typography>
+                  <Typography variant="small" className="text-beige/75">Professional custom RAID configuration and Active Directory setup.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.35}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Briefcase className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Comprehensive AMC</Typography>
+                  <Typography variant="small" className="text-beige/75">Ongoing Annual Maintenance Contracts to ensure your infrastructure never fails.</Typography>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </Section>

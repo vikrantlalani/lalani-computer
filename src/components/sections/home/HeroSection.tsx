@@ -73,7 +73,7 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 bg-[#1925AA]/80 border border-[#1925AA]/50 text-[#E8E6E0] text-xs font-heading font-bold uppercase tracking-widest px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-6 sm:mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(25,37,170,0.4)]"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#E8E6E0] animate-pulse" />
-          Enterprise IT Partner
+          Mumbai's Premier IT Hardware Supplier
         </motion.div>
 
         {/* Headline */}
@@ -88,21 +88,35 @@ export function HeroSection() {
           transition={{ delay: 0.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-base sm:text-lg md:text-xl text-[#E8E6E0]/95 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
         >
-          IT Hardware Peripherals & Turnkey Solutions Delivered Faster Than E‑commerce. Mumbai‑wide fast delivery, Pan‑India shipping, genuine warrantied products.
+          From single high-end laptops for home offices to turnkey data center deployments. We deliver genuine IT hardware faster than e-commerce.
         </motion.p>
 
-        {/* SEO Contextual Links */}
+        {/* SEO Contextual Links — Row 1: Enterprise / B2B */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm md:text-base font-medium text-[#E8E6E0]/80"
+          transition={{ delay: 1.1, duration: 0.8 }}
+          className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
         >
           <a href="/solutions/office-network-setup-india" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Office Network Setup Company India</a>
           <span className="hidden sm:inline opacity-30">•</span>
           <a href="/solutions/enterprise-servers-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Enterprise Servers in Mumbai</a>
           <span className="hidden sm:inline opacity-30">•</span>
-          <a href="/solutions/storage-server-supplier-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Colocation & Storage Server Supplier</a>
+          <a href="/solutions/storage-server-supplier-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Colocation &amp; Storage Server Supplier</a>
+        </motion.div>
+
+        {/* SEO Contextual Links — Row 2: Individual / B2C */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="mt-3 flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
+        >
+          <a href="/products/computing" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Laptops &amp; Desktops</a>
+          <span className="hidden sm:inline opacity-30">•</span>
+          <a href="/solutions/custom-pc-builds" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Custom PC Builds</a>
+          <span className="hidden sm:inline opacity-30">•</span>
+          <a href="/solutions/repairs" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Hardware Repairs</a>
         </motion.div>
 
       </div>

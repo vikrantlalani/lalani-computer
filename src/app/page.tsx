@@ -33,6 +33,10 @@ const TestimonialsSection = dynamic(
   () => import("@/components/sections/home/TestimonialsSection").then(m => m.TestimonialsSection),
   { ssr: true }
 );
+const GuidesOverviewSection = dynamic(
+  () => import("@/components/sections/home/GuidesOverviewSection").then(m => m.GuidesOverviewSection),
+  { ssr: true }
+);
 const RequirementCTASection = dynamic(
   () => import("@/components/sections/home/RequirementCTASection").then(m => m.RequirementCTASection),
   { ssr: true }
@@ -71,7 +75,7 @@ const jsonLd = {
   "priceRange": "₹₹₹",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "59, Janmabhoomi Marg, Janmabhoomi Bhavan, Fort",
+    "streetAddress": "2nd floor, Fountain Circle, 59, Janmabhoomi Marg, opp. Siddharth college, Kala Ghoda, Fort",
     "addressLocality": "Mumbai",
     "postalCode": "400001",
     "addressCountry": "IN"
@@ -103,6 +107,7 @@ export default function Home() {
       <SolutionsOverviewSection />
       <DeliveryAndServiceSection />
       <ClientsStripSection />
+      <GuidesOverviewSection />
       <TestimonialsSection />
     </>
   );

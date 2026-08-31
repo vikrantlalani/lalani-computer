@@ -3,15 +3,15 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Battery, Keyboard, Cable, Headphones } from "lucide-react";
+import { CheckCircle2, Battery, Keyboard, Cable, Headphones, Truck, ShieldCheck, Zap, Briefcase, Plug, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/products/peripherals-power' },
-  title: "Corporate IT Peripherals & UPS Power Backup | Mumbai",
-  description: "Bulk procurement for commercial UPS systems, enterprise power backup, and office IT peripherals including keyboards, headsets, and structured cabling in Mumbai.",
+  title: "IT Peripherals, Accessories & Power Backup | Mumbai",
+  description: "Mumbai's trusted supplier for computer accessories, monitors, and enterprise UPS systems. Order single high-end peripherals or bulk corporate power backups.",
 };
 
 const peripheralTypes = [
@@ -22,15 +22,15 @@ const peripheralTypes = [
     brands: "APC by Schneider Electric, Microtek, Luminous",
   },
   {
-    name: "Office Accessories",
+    name: "Computer & Laptop Accessories",
     icon: <Keyboard className="w-6 h-6" />,
     features: ["Ergonomic wireless keyboards and mice", "High-res webcams for conferencing", "Laptop docking stations and hubs", "Privacy screens and mounts"],
     brands: "Logitech, Dell, HP, Lenovo",
   },
   {
-    name: "Commercial Headsets",
+    name: "Professional Audio & Headsets",
     icon: <Headphones className="w-6 h-6" />,
-    features: ["Noise-cancelling headsets for BPO/KPO", "Wireless DECT headsets for mobility", "UC certified for Microsoft Teams", "Durable build for 24/7 call centers"],
+    features: ["Noise-cancelling headsets for home offices & BPOs", "Wireless DECT headsets for mobility", "UC certified for Microsoft Teams & Zoom", "Durable build for 24/7 reliability"],
     brands: "Jabra, Plantronics (Poly), Sennheiser",
   },
   {
@@ -41,20 +41,20 @@ const peripheralTypes = [
   },
 ];
 
-const advantages = [
-  "Immediate availability of bulk accessory orders",
-  "Genuine OEM parts to protect your hardware investments",
-  "Expert UPS sizing based on actual IT load and backup required",
-  "AMC options for high-capacity enterprise UPS systems",
-  "Seamless integration with your workstation deployments",
-  "One-stop procurement for new office setups",
-];
 
 export default function PeripheralsPowerPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I buy a single mechanical keyboard or monitor from you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! While we fulfill massive corporate orders, we also supply single, high-quality computer accessories to individual professionals."
+        }
+      },
       {
         "@type": "Question",
         "name": "Do you supply and maintain corporate UPS systems?",
@@ -65,10 +65,18 @@ export default function PeripheralsPowerPage() {
       },
       {
         "@type": "Question",
-        "name": "Do you supply bulk corporate printers and original toner cartridges?",
+        "name": "Do you sell high-performance or gaming peripherals?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we supply enterprise-grade laser printers from HP, Canon, and Epson, along with guaranteed 100% genuine OEM toner and ink supplies."
+          "text": "Absolutely. While our primary focus is premium corporate IT hardware, we stock high-end mechanical keyboards, ultrawide monitors, and performance headsets that power-users and enthusiasts love."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help calculate the UPS load for my home office or startup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our engineers will calculate your total IT power load and recommend the exact kVA rating needed to keep your workstations running during outages."
         }
       },
       {
@@ -76,7 +84,7 @@ export default function PeripheralsPowerPage() {
         "name": "How much does a corporate UPS or bulk peripheral order cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pricing scales based on your power load (kVA) requirements for UPS, or the specific printer models required for your volume."
+          "text": "Pricing scales based on your power load (kVA) requirements for UPS, or the specific hardware models required for your volume."
         }
       }
     ]
@@ -84,16 +92,24 @@ export default function PeripheralsPowerPage() {
 
   const faqItems = [
     {
+      question: "Can I buy a single mechanical keyboard or monitor from you?",
+      answer: "Yes! While we fulfill massive corporate orders, we also supply single, high-quality computer accessories to individual professionals."
+    },
+    {
       question: "Do you supply and maintain corporate UPS systems?",
       answer: "Yes, we provide enterprise UPS systems from APC and Vertiv, including routine AMC battery maintenance and replacements to prevent swelling and unexpected downtime."
     },
     {
-      question: "Do you supply bulk corporate printers and original toner cartridges?",
-      answer: "Yes, we supply enterprise-grade laser printers from HP, Canon, and Epson, along with guaranteed 100% genuine OEM toner and ink supplies."
+      question: "Do you sell high-performance or gaming peripherals?",
+      answer: "Absolutely. While our primary focus is premium corporate IT hardware, we stock high-end mechanical keyboards, ultrawide monitors, and performance headsets that power-users and enthusiasts love."
+    },
+    {
+      question: "Can you help calculate the UPS load for my home office or startup?",
+      answer: "Yes, our engineers will calculate your total IT power load and recommend the exact kVA rating needed to keep your workstations running during outages."
     },
     {
       question: "How much does a corporate UPS or bulk peripheral order cost?",
-      answer: <>Pricing scales based on your power load (kVA) requirements for UPS, or the specific printer models required for your volume. <Link href="/contact" className="text-primary hover:underline font-medium">Contact us for a custom corporate quote.</Link></>
+      answer: <>Pricing scales based on your power load (kVA) requirements for UPS, or the specific hardware models required for your volume. <Link href="/contact" className="text-primary hover:underline font-medium">Contact us for a custom quote.</Link></>
     }
   ];
 
@@ -117,12 +133,12 @@ export default function PeripheralsPowerPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Essentials & Backup</Typography>
-            <Typography variant="h1" className="mb-6">Corporate IT Peripherals & Power Backup</Typography>
+            <Typography variant="h1" className="mb-6">IT Accessories, Peripherals & Power Backup</Typography>
             <Typography variant="lead">
-              The crucial components that keep your operations running. From ergonomic desk accessories that boost productivity to robust UPS systems that protect your servers from power fluctuations.
+              The crucial components that keep your operations running. From ergonomic desk accessories and premium monitors for home offices, to robust enterprise UPS systems that protect corporate servers from power fluctuations.
             </Typography>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact"><Button size="lg">Request Bulk Accessories</Button></Link>
+              <Link href="/contact"><Button size="lg">Request a Quote</Button></Link>
             </div>
           </FadeIn>
         </div>
@@ -173,24 +189,81 @@ export default function PeripheralsPowerPage() {
           ))}
         </div>
       </Section>
-
       <Section variant="dark">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Typography variant="h2" className="text-white text-center mb-8">Why Trust Lalani for Essentials?</Typography>
             <Typography variant="lead" className="text-center text-beige/70 mb-12">
               We ensure your peripherals match the quality of your core hardware, and your power systems are properly sized for your critical loads.
             </Typography>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {advantages.map((point, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors h-full">
-                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <Typography variant="body" className="text-beige/90">{point}</Typography>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <FadeIn delay={0.1}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Truck className="w-6 h-6" />
                 </div>
-              </FadeIn>
-            ))}
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Immediate Availability</Typography>
+                  <Typography variant="small" className="text-beige/75">Extensive local stock ensures rapid delivery of single units and bulk peripheral orders.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Genuine OEM Parts</Typography>
+                  <Typography variant="small" className="text-beige/75">Authentic, authorized hardware designed to protect and complement your core IT investments.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Expert UPS Sizing</Typography>
+                  <Typography variant="small" className="text-beige/75">Calculated capacity planning based on your actual IT loads and backup duration requirements.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.25}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Briefcase className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Enterprise AMC Options</Typography>
+                  <Typography variant="small" className="text-beige/75">Comprehensive maintenance and battery replacement schedules for high-capacity UPS setups.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Plug className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Seamless Integration</Typography>
+                  <Typography variant="small" className="text-beige/75">Peripherals tested and validated to integrate flawlessly with your existing workstation rollouts.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.35}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShoppingCart className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">One-Stop Hardware Hub</Typography>
+                  <Typography variant="small" className="text-beige/75">Simplify your tech upgrades by sourcing laptops, accessories, and power backups all from Lalani.</Typography>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </Section>
@@ -200,7 +273,7 @@ export default function PeripheralsPowerPage() {
           <FadeIn>
             <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
             <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
-            <Typography variant="lead">Common questions about UPS power backup and corporate IT peripherals.</Typography>
+            <Typography variant="lead">Common questions from individuals and enterprises about UPS power backup and IT peripherals.</Typography>
           </FadeIn>
         </div>
         <FadeIn delay={0.2} direction="up">

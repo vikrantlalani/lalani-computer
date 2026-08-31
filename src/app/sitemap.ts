@@ -81,6 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.65,
     },
+    {
+      url: `${BASE}/products/accessories`,
+      lastModified: lastMod,
+      changeFrequency: 'weekly',
+      priority: 0.75,
+    },
 
     // ── Turnkey Solutions pages ──────────────────────────────────────────────
     {
@@ -94,6 +100,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastMod,
       changeFrequency: 'monthly',
       priority: 0.75,
+    },
+    {
+      url: `${BASE}/solutions/repairs`,
+      lastModified: lastMod,
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
       url: `${BASE}/solutions/surveillance-security`,

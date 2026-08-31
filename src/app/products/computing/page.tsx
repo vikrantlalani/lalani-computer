@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Laptop, Monitor, Cpu, Briefcase } from "lucide-react";
+import { CheckCircle2, Laptop, Monitor, Cpu, Briefcase, User, Building, Package, ShieldCheck, Truck, RefreshCw, CreditCard } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -39,16 +39,14 @@ const computingTypes = [
     features: ["Zero-client computing for secure environments", "Centralized VDI management", "Extremely low power consumption", "No local data storage (high security)"],
     brands: "HP t-series, Dell Wyse",
   },
+  {
+    name: "Personal & Creator Laptops",
+    icon: <Laptop className="w-6 h-6" />,
+    features: ["High-end GPUs for gaming and content creation", "Vibrant color-accurate displays", "Premium aluminum build quality", "Available for individual purchase"],
+    brands: "Lenovo Legion, Dell XPS, HP Omen",
+  },
 ];
 
-const advantages = [
-  "Massive local Mumbai inventory for same-day dispatch",
-  "Flexible corporate credit lines available",
-  "Seamless warranty coordination directly with OEMs",
-  "Custom imaging and OS deployment before delivery",
-  "Asset tagging and inventory management support",
-  "Buyback and eco-friendly e-waste disposal of old fleet",
-];
 
 export default function ComputingPage() {
   const faqSchema = {
@@ -78,6 +76,14 @@ export default function ComputingPage() {
           "@type": "Answer",
           "text": "Volume pricing depends entirely on processor specifications, RAM, and total quantity. As authorized OEM partners, we offer deep discounts over retail pricing."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I buy a single laptop for personal or home-office use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! While we specialize in enterprise deployments, individual professionals can purchase single units directly from us at competitive supplier pricing."
+        }
       }
     ]
   };
@@ -94,6 +100,10 @@ export default function ComputingPage() {
     {
       question: "What is the cost of buying corporate laptops in bulk?",
       answer: <>Volume pricing depends entirely on processor specifications, RAM, and total quantity. As authorized OEM partners, we offer deep discounts over retail pricing. <Link href="/contact" className="text-primary hover:underline font-medium">Request a custom bulk quotation.</Link></>
+    },
+    {
+      question: "Can I buy a single laptop for personal or home-office use?",
+      answer: "Yes! While we specialize in enterprise deployments, individual professionals can purchase single units directly from us at competitive supplier pricing."
     }
   ];
 
@@ -117,12 +127,13 @@ export default function ComputingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Endpoints & Devices</Typography>
-            <Typography variant="h1" className="mb-6">Corporate Computing Solutions</Typography>
+            <Typography variant="h1" className="mb-6">Corporate & Professional Computing Solutions</Typography>
             <Typography variant="lead">
-              Empower your workforce with reliable, business-grade computing. From massive BPO desktop rollouts to executive ultrabooks and rendering workstations, we are Mumbai's premier procurement partner.
+              Empower your workforce with reliable, business-grade computing. Whether you are an individual professional buying a single workstation or an IT manager planning a massive BPO desktop rollout, Lalani Computers is Mumbai's premier procurement partner.
             </Typography>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact"><Button size="lg">Request Bulk Pricing</Button></Link>
+              <Link href="/contact"><Button variant="outline" size="lg" className="bg-white hover:bg-primary/5">Buy for Individual</Button></Link>
             </div>
           </FadeIn>
         </div>
@@ -175,22 +186,80 @@ export default function ComputingPage() {
       </Section>
 
       <Section variant="dark">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <Typography variant="h2" className="text-white text-center mb-8">Why Buy IT Hardware from Lalani?</Typography>
+            <Typography variant="h2" className="text-white text-center mb-4">Why Buy IT Hardware from Lalani?</Typography>
             <Typography variant="lead" className="text-center text-beige/70 mb-12">
-              E-commerce platforms cannot match our B2B focus, corporate billing, and rapid local fulfillment.
+              E-commerce platforms cannot match our dedicated support, corporate billing, and rapid local fulfillment—whether you need 1 machine or 100.
             </Typography>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {advantages.map((point, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors h-full">
-                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <Typography variant="body" className="text-beige/90">{point}</Typography>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <FadeIn delay={0.1}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Truck className="w-6 h-6" />
                 </div>
-              </FadeIn>
-            ))}
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Same-Day Mumbai Dispatch</Typography>
+                  <Typography variant="small" className="text-beige/75">Massive local stock — single unit delivered today or 50 machines this week. No 3-5 day e-commerce waits.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Building className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Corporate Fleet Management</Typography>
+                  <Typography variant="small" className="text-beige/75">Custom OS imaging, asset tagging, and inventory management — your entire rollout handled end-to-end.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <User className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Individual Power-Users</Typography>
+                  <Typography variant="small" className="text-beige/75">Direct supplier pricing with no middlemen. Buy one high-spec laptop at the same rate corporates pay.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.25}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">100% Genuine OEM Parts</Typography>
+                  <Typography variant="small" className="text-beige/75">Authorized HP, Dell, Lenovo & Apple partner. Full manufacturer warranty — zero grey-market risk.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <RefreshCw className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Buyback & E-Waste Disposal</Typography>
+                  <Typography variant="small" className="text-beige/75">Upgrade your fleet without landfill guilt. We handle secure data wiping and eco-friendly disposal of old hardware.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.35}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <CreditCard className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Flexible Corporate Billing</Typography>
+                  <Typography variant="small" className="text-beige/75">GST invoicing, corporate credit lines, and PO-based procurement to satisfy your finance department.</Typography>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </Section>
@@ -200,7 +269,7 @@ export default function ComputingPage() {
           <FadeIn>
             <Typography variant="eyebrow" className="mb-4">FAQs</Typography>
             <Typography variant="h2" className="mb-4">Frequently Asked Questions</Typography>
-            <Typography variant="lead">Common questions about corporate laptop and desktop procurement.</Typography>
+            <Typography variant="lead">Common questions from individuals and corporate buyers in Mumbai.</Typography>
           </FadeIn>
         </div>
         <FadeIn delay={0.2} direction="up">

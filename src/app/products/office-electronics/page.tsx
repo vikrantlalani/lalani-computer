@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Printer, Tv, PhoneCall, MonitorPlay } from "lucide-react";
+import { CheckCircle2, Printer, Tv, PhoneCall, MonitorPlay, ShieldCheck, Network } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -40,14 +40,6 @@ const electronicTypes = [
   },
 ];
 
-const advantages = [
-  "Complete boardroom A/V integration available",
-  "Printer AMC including toner and drum replacement",
-  "On-site demonstration for high-end conferencing gear",
-  "Authorized partner warranties and support",
-  "Seamless integration with your existing IT network",
-  "Scalable telecom solutions for growing teams",
-];
 
 export default function OfficeElectronicsPage() {
   return (
@@ -124,22 +116,80 @@ export default function OfficeElectronicsPage() {
       </Section>
 
       <Section variant="dark">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Typography variant="h2" className="text-white text-center mb-8">Why Choose Lalani Computers?</Typography>
             <Typography variant="lead" className="text-center text-beige/70 mb-12">
               We go beyond the box. We install, calibrate, and maintain your office electronics to ensure zero workflow disruption.
             </Typography>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {advantages.map((point, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors h-full">
-                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <Typography variant="body" className="text-beige/90">{point}</Typography>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <FadeIn delay={0.1}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <MonitorPlay className="w-6 h-6" />
                 </div>
-              </FadeIn>
-            ))}
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">A/V Integration</Typography>
+                  <Typography variant="small" className="text-beige/75">Complete boardroom audio/visual integration and professional projector setup.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Printer className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Printer AMC</Typography>
+                  <Typography variant="small" className="text-beige/75">Comprehensive AMC covering toner, drum replacement, and routine maintenance.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Tv className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">On-Site Demonstrations</Typography>
+                  <Typography variant="small" className="text-beige/75">Request on-site demonstrations for high-end video conferencing and display equipment.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.25}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Authorized Warranties</Typography>
+                  <Typography variant="small" className="text-beige/75">Direct authorized partner warranties and reliable brand-backed technical support.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Network className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Network Integration</Typography>
+                  <Typography variant="small" className="text-beige/75">Seamless integration of smart electronics and IP phones with your existing IT network.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.35}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <PhoneCall className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Scalable Telecom</Typography>
+                  <Typography variant="small" className="text-beige/75">Scalable EPABX and telephony solutions designed to grow with your workforce.</Typography>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </Section>

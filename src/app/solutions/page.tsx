@@ -87,6 +87,13 @@ export default function SolutionsPage() {
       deliverables: ["Enterprise routing & switching", "Seamless Wi-Fi coverage", "Secure firewall configuration", "Load Balancers"],
       href: "/solutions/office-network-setup-india"
     },
+    {
+      title: "IT Hardware Repair & Upgrades",
+      useCase: "Individuals & Corporates.",
+      process: "Diagnostics → Cost Estimate → Sourcing → Repair → Testing",
+      deliverables: ["Chip-Level Motherboard Repair", "Speed & Storage Upgrades", "Screen & Battery Replacements", "Server Troubleshooting"],
+      href: "/solutions/repairs"
+    },
   ];
 
   const stepper = [

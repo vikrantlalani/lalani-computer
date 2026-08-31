@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Wifi, Shield, Lock, Router } from "lucide-react";
+import { CheckCircle2, Wifi, Shield, Lock, Router, Network, Cable, ShieldAlert, ShieldCheck, ClipboardCheck, Truck } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -40,14 +40,6 @@ const networkTypes = [
   },
 ];
 
-const advantages = [
-  "End-to-end network design and site surveys",
-  "Professional structured cabling and rack dressing",
-  "Firmware updates and security patch management",
-  "Authorized dealer warranties on all networking gear",
-  "CCTV audit compliance for BFSI and Healthcare",
-  "Local stock availability for rapid network expansion",
-];
 
 export default function NetworkingSecurityPage() {
   return (
@@ -124,22 +116,80 @@ export default function NetworkingSecurityPage() {
       </Section>
 
       <Section variant="dark">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Typography variant="h2" className="text-white text-center mb-8">Why Trust Lalani with Your Network?</Typography>
             <Typography variant="lead" className="text-center text-beige/70 mb-12">
               Networking isn't just plugging in cables. We ensure bottleneck-free data flow and impenetrable perimeter security.
             </Typography>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {advantages.map((point, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors h-full">
-                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <Typography variant="body" className="text-beige/90">{point}</Typography>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <FadeIn delay={0.1}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Network className="w-6 h-6" />
                 </div>
-              </FadeIn>
-            ))}
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Network Design & Surveys</Typography>
+                  <Typography variant="small" className="text-beige/75">End-to-end network design and comprehensive site surveys before deployment.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Cable className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Structured Cabling</Typography>
+                  <Typography variant="small" className="text-beige/75">Professional structured cabling and meticulous rack dressing for clean server rooms.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShieldAlert className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Security Patching</Typography>
+                  <Typography variant="small" className="text-beige/75">Proactive firmware updates and critical security patch management.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.25}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Authorized Warranties</Typography>
+                  <Typography variant="small" className="text-beige/75">Direct authorized dealer warranties on all networking and security hardware.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ClipboardCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Audit Compliance</Typography>
+                  <Typography variant="small" className="text-beige/75">CCTV and network audit compliance standards met for BFSI and Healthcare sectors.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.35}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Local Stock Availability</Typography>
+                  <Typography variant="small" className="text-beige/75">Extensive local inventory available for rapid network expansion or replacements.</Typography>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </Section>

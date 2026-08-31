@@ -11,8 +11,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/products' },
-  title: "Corporate IT Hardware Supplier & Server Dealer Mumbai",
-  description: "Mumbai's trusted B2B IT hardware supplier. Procure corporate laptops, Dell/HPE enterprise servers, networking gear, and office electronics in bulk with fast local delivery.",
+  title: "IT Hardware Supplier Mumbai | Laptops, Servers & Networking",
+  description: "Mumbai's trusted IT hardware supplier for individuals and enterprises. Shop premium laptops, custom PCs, enterprise servers, and networking gear with local delivery.",
 };
 
 const jsonLd = {
@@ -53,7 +53,7 @@ export default function ProductsPage() {
             <Typography variant="eyebrow">Product Catalogue</Typography>
             <Typography variant="h1" className="mb-6">From Laptops to LTO Tapes, Everything Your IT Needs Under One Roof.</Typography>
             <Typography variant="lead">
-              We maintain a massive inventory of corporate IT hardware from top global brands. Browse our specialized categories including <Link href="/products/computing" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Corporate Computing</Link>, <Link href="/products/servers" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Enterprise Servers</Link>, <Link href="/products/networking-security" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Networking Gear</Link>, and <Link href="/products/office-electronics" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Office Electronics</Link> delivered fast across India.
+              We maintain a massive inventory of premium IT hardware from top global brands. Whether you're an individual power-user or a corporate enterprise, browse our specialized categories including <Link href="/products/computing" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Laptops & Desktops</Link>, <Link href="/products/servers" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Enterprise Servers</Link>, <Link href="/products/networking-security" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Networking Gear</Link>, and <Link href="/products/peripherals-power" className="text-primary underline decoration-primary/30 hover:decoration-primary transition-colors">Accessories & Power</Link> delivered fast across India.
             </Typography>
           </FadeIn>
         </div>
@@ -113,6 +113,11 @@ export default function ProductsPage() {
                       <td className="p-6 font-medium">Warranty & Service Coordination</td>
                       <td className="p-6 border-l border-primary/10 bg-success/5 font-medium flex items-center gap-2"><CheckCircle2 className="text-success w-5 h-5"/> Handled by us locally</td>
                       <td className="p-6 border-l border-primary/10 text-text-dark/70 flex items-center gap-2"><XCircle className="text-error w-5 h-5"/> Self-service via brand</td>
+                    </tr>
+                    <tr className="border-b border-primary/10 transition-colors hover:bg-white">
+                      <td className="p-6 font-medium">Pre-Sales Advice & Custom Builds</td>
+                      <td className="p-6 border-l border-primary/10 bg-success/5 font-medium flex items-center gap-2"><CheckCircle2 className="text-success w-5 h-5"/> Tailored to your exact needs</td>
+                      <td className="p-6 border-l border-primary/10 text-text-dark/70 flex items-center gap-2"><XCircle className="text-error w-5 h-5"/> Buy it as-is</td>
                     </tr>
                     <tr className="border-b border-primary/10 transition-colors hover:bg-white">
                       <td className="p-6 font-medium">Corporate Billing & GST</td>

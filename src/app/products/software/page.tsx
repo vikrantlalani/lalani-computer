@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Terminal, ShieldAlert, Cloud, Database } from "lucide-react";
+import { CheckCircle2, Terminal, ShieldAlert, Cloud, Database, ShieldCheck, UserCheck, Layers, ArrowRightLeft, Tags, Search } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -41,14 +41,6 @@ const softwareTypes = [
   },
 ];
 
-const advantages = [
-  "Guaranteed compliance with OEM software audits",
-  "Expert guidance on volume licensing vs subscription models",
-  "Centralized license management and renewals",
-  "Deployment assistance for Microsoft 365 migrations",
-  "Bundled pricing when purchased with our IT hardware",
-  "VAPT and security posture assessments available",
-];
 
 export default function SoftwarePage() {
   const faqSchema = {
@@ -175,22 +167,81 @@ export default function SoftwarePage() {
       </Section>
 
       <Section variant="dark">
-        <div className="max-w-4xl mx-auto">
+      <Section variant="dark">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Typography variant="h2" className="text-white text-center mb-8">Why Procure Software with Us?</Typography>
             <Typography variant="lead" className="text-center text-beige/70 mb-12">
               Avoid hefty non-compliance fines and simplify your IT billing by consolidating your hardware and software procurement.
             </Typography>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {advantages.map((point, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors h-full">
-                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <Typography variant="body" className="text-beige/90">{point}</Typography>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <FadeIn delay={0.1}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
-              </FadeIn>
-            ))}
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Audit Compliance</Typography>
+                  <Typography variant="small" className="text-beige/75">Guaranteed compliance with complex OEM software audits and licensing regulations.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <UserCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Licensing Guidance</Typography>
+                  <Typography variant="small" className="text-beige/75">Expert guidance on navigating volume licensing versus subscription models for your scale.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Layers className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Centralized Management</Typography>
+                  <Typography variant="small" className="text-beige/75">Streamlined, centralized license management and proactive tracking of upcoming renewals.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.25}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <ArrowRightLeft className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Migration Assistance</Typography>
+                  <Typography variant="small" className="text-beige/75">Seamless deployment assistance and secure data migration for platforms like Microsoft 365.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Tags className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Bundled Pricing</Typography>
+                  <Typography variant="small" className="text-beige/75">Aggressive bundled pricing when enterprise software is purchased with our IT hardware.</Typography>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.35}>
+              <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors h-full">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary-light flex-shrink-0">
+                  <Search className="w-6 h-6" />
+                </div>
+                <div>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Security Assessments</Typography>
+                  <Typography variant="small" className="text-beige/75">Professional VAPT and comprehensive security posture assessments available.</Typography>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </Section>
