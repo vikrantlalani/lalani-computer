@@ -165,8 +165,6 @@ export default function SoftwarePage() {
           ))}
         </div>
       </Section>
-
-      <Section variant="dark">
       <Section variant="dark">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
