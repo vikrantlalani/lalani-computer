@@ -67,7 +67,7 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
   try {
     if (process.env.MONGODB_URI) {
       await dbConnect();
-      leads = (await Lead.find({}).sort({ createdAt: -1 }).lean()) as unknown as LeadItem[];
+      leads = (await Lead.find({}).sort({ createdAt: -1 }).select('-fileData').lean()) as unknown as LeadItem[];
     }
   } catch (error) {
     console.error("Failed to fetch leads:", error);
@@ -213,7 +213,6 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
                           fileName={lead.fileName}
                           fileSize={lead.fileSize}
                           fileType={lead.fileType}
-                          fileData={lead.fileData}
                           fileUrl={lead.fileUrl}
                           adminSecret={adminSecret}
                         />
