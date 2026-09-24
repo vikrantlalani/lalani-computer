@@ -207,13 +207,14 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
                           <span className="text-xs text-text-dark/30 italic">No message.</span>
                         )}
 
-                        {/* Manifest File Attachment (Download & Preview) */}
+                        {/* Manifest File Attachment (Download) */}
                         <LeadManifestViewer
                           leadId={lead._id.toString()}
                           fileName={lead.fileName}
                           fileSize={lead.fileSize}
                           fileType={lead.fileType}
                           fileUrl={lead.fileUrl}
+                          messageFallback={lead.message}
                           adminSecret={adminSecret}
                         />
                       </td>

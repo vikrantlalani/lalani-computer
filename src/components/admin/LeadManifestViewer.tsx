@@ -9,7 +9,19 @@ interface Props {
   fileSize?: string;
   fileType?: string;
   fileUrl?: string;
+  messageFallback?: string;
   adminSecret: string;
+}
+
+// Try to extract file info from the message text for older leads
+// e.g. "Corporate Asset Manifest Uploaded: HimankResume.pdf (121.5 KB, PDF)"
+function parseFileFromMessage(message?: string): { name: string; size: string; type: string } | null {
+  if (!message) return null;
+  const match = message.match(/Uploaded:\s*([^\s(]+)\s*\(([^,]+),\s*([^)]+)\)/i);
+  if (match) {
+    return { name: match[1].trim(), size: match[2].trim(), type: match[3].trim() };
+  }
+  return null;
 }
 
 export function LeadManifestViewer({
@@ -18,16 +30,22 @@ export function LeadManifestViewer({
   fileSize,
   fileType,
   fileUrl,
+  messageFallback,
   adminSecret,
 }: Props) {
+  // Use explicit fileName, or fall back to parsing the message text
+  const fallback = !fileName ? parseFileFromMessage(messageFallback) : null;
 
+  const resolvedName = fileName || fallback?.name;
+  const resolvedSize = fileSize || fallback?.size;
+  const resolvedType = fileType || fallback?.type;
 
-  const displayName = fileName || "uploaded_manifest.csv";
+  // Nothing to render if no file info anywhere
+  if (!resolvedName && !fileUrl) return null;
+
+  const displayName = resolvedName || "uploaded_manifest.csv";
   const isCSV =
-    displayName.toLowerCase().endsWith(".csv") || fileType === "CSV";
-
-  // Nothing to render if no file was attached
-  if (!fileName && !fileUrl) return null;
+    displayName.toLowerCase().endsWith(".csv") || resolvedType?.toUpperCase() === "CSV";
 
   const downloadUrl = `/api/leads/${leadId}/download?secret=${encodeURIComponent(adminSecret)}`;
 
@@ -50,7 +68,7 @@ export function LeadManifestViewer({
             {displayName}
           </p>
           <p className="text-[11px] text-emerald-700">
-            {fileType || "File"} {fileSize ? `• ${fileSize}` : ""}
+            {resolvedType || "File"} {resolvedSize ? `• ${resolvedSize}` : ""}
           </p>
         </div>
       </div>
@@ -68,4 +86,3 @@ export function LeadManifestViewer({
     </div>
   );
 }
-
