@@ -42,6 +42,7 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [fileBase64, setFileBase64] = useState<string | null>(null); // stored at file-pick time
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -99,6 +100,17 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
     }
 
     setSelectedFile(file);
+    setFileBase64(null); // reset while reading
+
+    // Read as base64 immediately and cache in state
+    const b64Reader = new FileReader();
+    b64Reader.onload = () => {
+      setFileBase64(b64Reader.result as string);
+    };
+    b64Reader.onerror = () => {
+      console.error("Failed to read file as base64");
+    };
+    b64Reader.readAsDataURL(file);
 
     if (ext === "csv") {
       const reader = new FileReader();
@@ -141,17 +153,9 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
   const clearFile = () => {
     setSelectedFile(null);
     setParsedData(null);
+    setFileBase64(null);
     setErrorMessage("");
     if (fileInputRef.current) fileInputRef.current.value = "";
-  };
-
-  const readFileAsBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = (err) => reject(err);
-      reader.readAsDataURL(file);
-    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -168,19 +172,15 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
       ? `Corporate Asset Manifest Uploaded: ${parsedData.fileName} (${parsedData.fileSize}, ${parsedData.fileType}${parsedData.rowCount > 0 ? `, ~${parsedData.rowCount} items` : ""})`
       : "Corporate IT Asset Manifest submitted without file attachment.";
 
+    // Use the pre-cached base64 (read at file-pick time, not at submit time)
     let filePayload: { name: string; size: string; type: string; data: string } | null = null;
-    if (selectedFile) {
-      try {
-        const base64Data = await readFileAsBase64(selectedFile);
-        filePayload = {
-          name: selectedFile.name,
-          size: (selectedFile.size / 1024).toFixed(1) + " KB",
-          type: selectedFile.name.split(".").pop()?.toUpperCase() || "DOCUMENT",
-          data: base64Data,
-        };
-      } catch (readErr) {
-        console.error("Failed to read file for upload:", readErr);
-      }
+    if (selectedFile && fileBase64) {
+      filePayload = {
+        name: selectedFile.name,
+        size: (selectedFile.size / 1024).toFixed(1) + " KB",
+        type: selectedFile.name.split(".").pop()?.toUpperCase() || "DOCUMENT",
+        data: fileBase64,
+      };
     }
 
     try {
