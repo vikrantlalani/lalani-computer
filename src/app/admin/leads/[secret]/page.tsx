@@ -154,12 +154,14 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
                             day: "2-digit",
                             month: "short",
                             year: "numeric",
+                            timeZone: "Asia/Kolkata",
                           }).format(new Date(lead.createdAt))}
                         </div>
                         <div className="text-xs text-text-dark/50 mt-0.5">
                           {new Intl.DateTimeFormat("en-IN", {
                             hour: "2-digit",
                             minute: "2-digit",
+                            timeZone: "Asia/Kolkata",
                           }).format(new Date(lead.createdAt))}
                         </div>
                       </td>
