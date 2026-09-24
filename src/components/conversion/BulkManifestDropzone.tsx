@@ -42,7 +42,10 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [fileBase64, setFileBase64] = useState<string | null>(null); // stored at file-pick time
+
+  // Use a ref (not state) so handleSubmit always reads the current base64
+  // without stale closure issues from React render batching
+  const fileBase64Ref = useRef<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -100,15 +103,16 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
     }
 
     setSelectedFile(file);
-    setFileBase64(null); // reset while reading
+    fileBase64Ref.current = null; // reset while reading
 
-    // Read as base64 immediately and cache in state
+    // Read as base64 immediately and cache in ref (not state — avoids stale closures)
     const b64Reader = new FileReader();
     b64Reader.onload = () => {
-      setFileBase64(b64Reader.result as string);
+      fileBase64Ref.current = b64Reader.result as string;
     };
     b64Reader.onerror = () => {
       console.error("Failed to read file as base64");
+      fileBase64Ref.current = null;
     };
     b64Reader.readAsDataURL(file);
 
@@ -153,7 +157,7 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
   const clearFile = () => {
     setSelectedFile(null);
     setParsedData(null);
-    setFileBase64(null);
+    fileBase64Ref.current = null;
     setErrorMessage("");
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
@@ -172,15 +176,36 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
       ? `Corporate Asset Manifest Uploaded: ${parsedData.fileName} (${parsedData.fileSize}, ${parsedData.fileType}${parsedData.rowCount > 0 ? `, ~${parsedData.rowCount} items` : ""})`
       : "Corporate IT Asset Manifest submitted without file attachment.";
 
-    // Use the pre-cached base64 (read at file-pick time, not at submit time)
+    // Get base64 from ref (set when file was picked)
+    // If ref is somehow empty, re-read the file now as a guaranteed fallback
     let filePayload: { name: string; size: string; type: string; data: string } | null = null;
-    if (selectedFile && fileBase64) {
-      filePayload = {
-        name: selectedFile.name,
-        size: (selectedFile.size / 1024).toFixed(1) + " KB",
-        type: selectedFile.name.split(".").pop()?.toUpperCase() || "DOCUMENT",
-        data: fileBase64,
-      };
+    if (selectedFile) {
+      let base64 = fileBase64Ref.current;
+
+      if (!base64) {
+        // Fallback: read at submit time (covers any async race conditions)
+        try {
+          base64 = await new Promise<string>((resolve, reject) => {
+            const r = new FileReader();
+            r.onload = () => resolve(r.result as string);
+            r.onerror = (err) => reject(err);
+            r.readAsDataURL(selectedFile);
+          });
+        } catch (readErr) {
+          console.error("[Dropzone] fallback base64 read failed:", readErr);
+        }
+      }
+
+      if (base64) {
+        filePayload = {
+          name: selectedFile.name,
+          size: (selectedFile.size / 1024).toFixed(1) + " KB",
+          type: selectedFile.name.split(".").pop()?.toUpperCase() || "DOCUMENT",
+          data: base64,
+        };
+      } else {
+        console.error("[Dropzone] Could not get base64 for file, submitting without attachment.");
+      }
     }
 
     try {

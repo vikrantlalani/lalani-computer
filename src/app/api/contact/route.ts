@@ -229,16 +229,23 @@ export async function POST(req: Request) {
       message 
     };
 
-    if (file && typeof file === "object" && file.data) {
+    if (file && typeof file === "object" && file.name) {
+      // Always save file metadata if the file object was received
       leadData.fileName = file.name || "inventory_manifest.csv";
       leadData.fileSize = file.size || "";
       leadData.fileType = file.type || "CSV";
-      leadData.fileData = file.data; // Store full base64 data
 
-      // Try uploading to Cloudinary if credentials are configured
-      const uploadedUrl = await uploadToCloudinary(file.data, leadData.fileName || "manifest.csv");
-      if (uploadedUrl) {
-        leadData.fileUrl = uploadedUrl;
+      if (file.data) {
+        // Save the actual file bytes as base64
+        leadData.fileData = file.data;
+
+        // Try uploading to Cloudinary if credentials are configured
+        const uploadedUrl = await uploadToCloudinary(file.data, leadData.fileName || "manifest.csv");
+        if (uploadedUrl) {
+          leadData.fileUrl = uploadedUrl;
+        }
+      } else {
+        console.warn("[Contact API] file object received but file.data is missing/empty. fileName:", file.name);
       }
     }
 
