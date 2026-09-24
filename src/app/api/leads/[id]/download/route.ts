@@ -35,20 +35,26 @@ export async function GET(
 
   try {
     await dbConnect();
-    const lead = await Lead.findById(id).lean();
+    // Cast explicitly so all raw MongoDB fields are accessible
+    const lead = await Lead.findById(id).lean() as Record<string, unknown> | null;
 
     if (!lead) {
       return NextResponse.json({ success: false, error: "Lead not found" }, { status: 404 });
     }
 
+    const fileData = lead.fileData as string | undefined;
+    const fileUrl = lead.fileUrl as string | undefined;
+    const fileName = (lead.fileName as string | undefined) || `manifest_${id}.csv`;
+
+    console.log(`[download] Lead ${id}: hasFileData=${!!fileData}, fileDataLen=${fileData?.length ?? 0}, hasFileUrl=${!!fileUrl}`);
+
     // 1. If base64 fileData is stored
-    if (lead.fileData) {
-      const base64Data = lead.fileData.includes("base64,")
-        ? lead.fileData.split("base64,")[1]
-        : lead.fileData;
+    if (fileData) {
+      const base64Data = fileData.includes("base64,")
+        ? fileData.split("base64,")[1]
+        : fileData;
 
       const buffer = Buffer.from(base64Data, "base64");
-      const fileName = lead.fileName || `manifest_${id}.csv`;
       const contentType = getMimeType(fileName);
 
       return new Response(buffer, {
@@ -62,16 +68,16 @@ export async function GET(
     }
 
     // 2. If Cloudinary URL is stored
-    if (lead.fileUrl) {
-      return NextResponse.redirect(lead.fileUrl);
+    if (fileUrl) {
+      return NextResponse.redirect(fileUrl);
     }
 
     return NextResponse.json(
-      { success: false, error: "No manifest file attached to this lead." },
+      { success: false, error: "No manifest file attached to this lead.", debug: { hasFileData: false, hasFileUrl: false, fields: Object.keys(lead) } },
       { status: 404 }
     );
   } catch (error) {
     console.error("GET /api/leads/[id]/download error:", error);
-    return NextResponse.json({ success: false, error: "Server error" }, { status: 500 });
+    return NextResponse.json({ success: false, error: String(error) }, { status: 500 });
   }
 }
