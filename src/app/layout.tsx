@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.lalanicomputers.com'),
   title: {
     default: "Lalani Computers | Corporate IT Hardware & Turnkey Solutions Mumbai",
-    template: "%s | Lalani Computers",
+    template: "%s",  // Pages already include "| Lalani Computers" — avoid double-branding
   },
   description: "Mumbai's trusted partner for enterprise IT hardware, peripherals, turnkey office setups, and AMC services. Over 30 years of excellence.",
   keywords: ["IT Hardware", "Corporate IT", "Laptops", "Servers", "Networking", "Mumbai IT supplier", "Turnkey IT Solutions"],
@@ -36,13 +36,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Lalani Computers",
+    url: "https://www.lalanicomputers.com",
     title: "Lalani Computers | Corporate IT Hardware & Turnkey Solutions",
     description: "Mumbai's trusted partner for enterprise IT hardware, peripherals, turnkey office setups, and AMC services.",
+    images: [
+      {
+        url: "https://www.lalanicomputers.com/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Lalani Computers – Enterprise IT Hardware & Solutions Mumbai",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lalani Computers | Corporate IT Hardware",
     description: "Mumbai's trusted partner for enterprise IT hardware, peripherals, and turnkey office setups.",
+    images: ["https://www.lalanicomputers.com/logo.png"],
   },
 };
 

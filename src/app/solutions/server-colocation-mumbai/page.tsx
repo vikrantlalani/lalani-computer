@@ -9,8 +9,14 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions/server-colocation-mumbai' },
-  title: "Server Colocation in Mumbai | Tier III Rack Leasing",
+  title: "Server Colocation Mumbai | Tier III Rack Leasing | Lalani Computers",
   description: "Enterprise server colocation services in Mumbai. Secure data center rack space leasing with 99.99% uptime, advanced cooling, and redundant power.",
+  openGraph: {
+    title: "Server Colocation Mumbai | Tier III Rack Leasing | Lalani Computers",
+    description: "Enterprise server colocation services in Mumbai. Secure data center rack space leasing with 99.99% uptime, advanced cooling, and redundant power.",
+    url: "https://www.lalanicomputers.com/solutions/server-colocation-mumbai",
+    type: "website",
+  },
 };
 
 export default function ColocationPage() {

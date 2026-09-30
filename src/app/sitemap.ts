@@ -340,5 +340,57 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+
+    // ── Solution landing pages missing from sitemap ─────────────────────────
+    {
+      url: `${BASE}/solutions/enterprise-servers-mumbai`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.78,
+    },
+    {
+      url: `${BASE}/solutions/office-network-setup-india`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/solutions/storage-server-supplier-mumbai`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/solutions/server-colocation-mumbai`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.72,
+    },
+    {
+      url: `${BASE}/solutions/it-asset-buyback`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.72,
+    },
+    {
+      url: `${BASE}/solutions/repairs/repair-vs-replace-guide`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+
+    // ── Product sub-pages missing from sitemap ──────────────────────────────
+    {
+      url: `${BASE}/products/peripherals-power/workstation-buying-guide`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/products/computing/leasing-vs-buying-corporate-laptops`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.78,
+    },
   ]
 }
